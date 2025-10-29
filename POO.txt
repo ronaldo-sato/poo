@@ -1,0 +1,189 @@
+PROGRAMAÇÃO ORIENTADA A OBJETOS - POO (OBJECT-ORIENTED PROGRAMMING - OOP)
+
+Paradigma de programação que utiliza tipos de dados personalizados conforme 
+necessidade através do uso de classes (objetos). 
+
+(Paradigma: é um conjunto de regras que estabelecem fronteiras e descrevem como
+resolver problemas dentros destas fronteiras. Assim, os paradigmas influenciam 
+nossa percepção, nos ajudam a organizar e a coordenar a maneira como olhamos 
+para o mundo. Dessa forma, Programação Orientada a Objetos é um paradigma para
+o desenvolvimento de software que se baseia na utilização de componentes 
+individuais, chamados objetos, que permitem construir sistemas mais complexos, 
+pois colaboram entre si por meio de seus relacionamentos (envio de mensagens).)
+
+O uso do paradigma orientado a objetos envolve seguir determinadas regras e se 
+baseia em conceitos como: classes, objetos, encapsulamento, herança, 
+dentre outros.
+
+
+CLASSES
+
+Classes são modelos de criação de objetos. Dessa forma, uma classe é a 
+representação de objetos e, possui atributos e métodos. Assim, quando um objeto
+é instanciado (criado), essa entidade terá dados e comportamentos conforme 
+definido em sua classe. 
+
+ATRIBUTOS: são as características ou propriedades que o objeto pode ter 
+(representam estados específicos do objeto).
+
+MÉTODOS: são as ações que um objeto pode realizar (manipulam os atributos do 
+objeto para realizar tarefas específicas).
+
+Uma classe representa uma ideia ou conceito do mundo externo e agrupa objetos
+com propriedades similares. 
+
+As classes são os blocos de construção mais importantes dos sistemas orientados
+a objetos, e devem possuir responsabilidades bem definidas na aplicação (o 
+propósito da classe deve ser bem especificado).
+
+
+VANTAGENS DA ORIENTAÇÃO A OBJETOS
+
+Proporciona estruturação modular dos programas (organização e eficiência de 
+códigos complexos);
+
+Objetos podem ser reutilizados em diferentes aplicações;
+
+Facilidade de manutenção de código (software);
+
+Desenvolvimento mais rápido (reuso de código; dependendo da abstração o 
+entendimento do código pode ser mais intuitivo);
+
+Encapsulamento: uso de um objeto mesmo sem o conhecimento da implementação 
+interna do objeto (por exemplo, para se dirigir um carro não precisa saber 
+todos os detalhes da mecânica do carro, embora saber isso possa ser útil no 
+caso do carro ter problemas, mas no caso da programação os objetos tem um 
+funcionamento previsível). 
+
+
+PRINCÍPIOS DA POO
+
+ABSTRAÇÃO: é a simplificação de um problema (complexo, do mundo real), focando 
+nos aspectos essenciais para um determinado contexto.
+
+ENCAPSULAMENTO: é delimitar ou restringir os detalhes importantes do objeto, 
+assim dessa maneira, os dados de um objeto e os métodos que os manipulam são 
+protegidos de forma que só podem ser acessados ou alterados através de métodos 
+específicos, garantindo o funcionamento dos objetos ou impedindo que eles 
+sejam modificados inesperadamente, o que mantem, portanto, a integridade do 
+objeto. 
+
+HERANÇA: é herdar características de uma classe, assim uma classe pode herdar 
+atributos e métodos de outra classe (classe pai ou superclasse), adicionando 
+novos comportamentos à classe filha, o que permite reescrever código, agregando
+características de uma classe a outra.  
+
+POLIMORFISMO: é quando diferentes objetos realizam ações semelhantes, mas cada 
+um de forma diferente, ou seja, no código várias classes podem ter um método 
+com mesmo nome, mas a implementação do método é específico a cada classe.
+
+
+RELACIONAMENTO DE CLASSES
+
+ACOMPLAMENTO
+
+Se refere ao grau de interdependência entre duas ou mais classes em um sistema 
+de software, onde, quanto maior o acomplamento entre classes mais elas estão 
+interligadas e dependentes uma da outra.
+
+Um sistema de software muito acoplado se torna de difícil compreensão, além do
+que testar e manter esse sistema pode gerar diversos problemas, pois mudanças 
+em uma classe podem exigir mudanças em outras classes interligadas.
+
+Por outro lado, um baixo acomplamento significa uma baixa interligação entre as
+classes e assim menos interdependência. Isso permite maior reutilização de 
+código, facilita de manutenção e torna o sistema mais flexível e adaptável a 
+mudanças.
+
+COESÃO
+
+Se refere ao grau em que os elementos dentro de uma classe estão relacionados.  
+Assim, uma classe com alta coesão significa que seus elementos possuem um 
+relacionamento íntimo e colaboram para realizar uma tarefa ou ação. Isso 
+proporciona um código mais fácil de ser lido e de mais fácil manutenção.
+
+Por outro lado, uma classe com baixa coesão significa que os membros possuem 
+baixo relacionamento entre si e portanto um maior números de membros realizam 
+tarefas distintas. Isso pode dificultar o entendimento, já que favorece uma 
+menor clareza da classe. Além do que, isso viola o princípio da responsabilidade
+única, onde uma classe deve ter apenas uma razão para mudar. 
+
+
+Portanto, no desenvolvimento de código é desejável buscar um equilíbrio entre 
+coesão e acoplamento, no sentido de se minimizar o acoplamento entre classes, 
+tornando o código (sistema) mais flexível e adaptável a mudanças enquanto 
+maximiza a coesão entre as classes, garantindo que cada classe tenha uma única
+responsabilidade clara e bem definida. 
+
+
+RELACIONAMENTO DE CLASSES NA POO
+
+São as maneiras pelas quais as classes podem se conectar e interagir uma com as
+outras. Dessa maneira a estruturação de um código e seu comportamento podem ser
+mais complexos.
+
+
+PRINCIPAIS RELACIONAMENTOS 
+
+ASSOCIAÇÃO
+
+É o relacionamento direto entre objetos, um objeto que de alguma forma está 
+relacionado a outro. Essa relação pode ser forte ou fraca.
+Ex: 
+Suponha uma classe autor, que intancia um objeto autor a partir de um nome, e 
+suponha uma classe livro onde um livro tem um autor, portanto nessa classe ao 
+instanciar um objeto livro, isso ocorre a partir do nome do livro e o nome da 
+classe autor; assim um autor pode ter vários livros associados.
+
+AGREGAÇÃO
+
+É um tipo especial de associação e indica que um objeto tem ou é composto de 
+outros objetos. No entanto, os objetos associados podem existir 
+independentemente do objeto principal.
+Ex: 
+Suponha uma escola com diversos alunos que estão divididos em turmas; então que 
+temos uma classe turma que pode ter agregação com a classe aluno, de maneira 
+que, uma turma pode ter vários alunos (a classe turma contém uma lista de 
+objetos da classe aluno), e assim os alunos podem existir independente da turma;
+ou seja, no código podemos excluir a turma que os alunos continuarão existindo.
+
+COMPOSIÇÃO
+
+É também um tipo especial de associação mas com relacionamento mais forte que 
+a agregação, onde um objeto ele é dono de outros objetos, assim, sua existência
+depende da existência dos outros objetos. Em outras palavras, os objetos que 
+estão associados ao objeto principal também vão ser excluídos caso o principal
+seja excluído.
+Ex:
+Suponha um sistema de carros; onde a classe carro pode ter uma composição com a 
+classe motor, ou seja, todo carro tem um motor (parte essencial do carro - não 
+existe um carro sem motor); isso significa um objeto carro está intimamente 
+ligada à existência do objeto motor, assim, a classe carro é composta por um 
+objeto da classe motor, e portanto quando um objeto carro é instanciado, um 
+objeto motor também é instanciado (implementaçãpo do construtor de inicialização
+da classe carro); assim, se o objeto carro é destruído, automaticamente, o 
+objeto motor também é destruído. 
+
+DEPENDÊNCIA
+
+Nesse relacionamento, uma classe depende de outra para funcionar de forma 
+correta, de maneira que, mudanças em uma classe possivelmente irá afetar a 
+outra classe.
+Ex:
+Suponha um banco que possui clientes; para fazer transações bancárias (um 
+cliente não consegue fazer transações se não tiver um banco), a classe cliente
+precisa da classe banco, ou seja, a classe cliente possui dependência com a 
+classe banco; dessa forma, uma mudança na classe banco possivelmente afeta a 
+classe cliente; então, a classe cliente não é uma parte essencial da classe 
+banco, ou seja, a classe banco não precisa da classe cliente para existir, mas 
+a classe cliente precisa da classe banco para fazer operações, mas não precisa
+necessariamente da classe banco para existir; no código, na instanciação de um 
+objeto cliente, precisa ser passado um objeto da classe banco como argumento, o 
+qual será um atributo da classe cliente.
+
+
+Portanto, os relacionamentos entre classes permitem que as classes se conectem 
+e interajam de diversas formas conforme a estrutura e comportamento do código. 
+
+Dependendo desses relacionamentos, podemos criar sistemas mais modulares, 
+flexíveis e também de fácil manutenção. 
