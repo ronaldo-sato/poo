@@ -56,7 +56,7 @@ caso do carro ter problemas, mas no caso da programação os objetos tem um
 funcionamento previsível). 
 
 
-PRINCÍPIOS DA POO (Os 4 pilares da POO)
+PRINCÍPIOS DA POO
 
 ABSTRAÇÃO: é a simplificação de um problema (complexo, do mundo real), focando 
 nos aspectos essenciais para um determinado contexto.
