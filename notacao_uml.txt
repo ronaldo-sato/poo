@@ -1,0 +1,69 @@
+NOTAÇÃO UML (Unified Model Language)
+
+Modelagem de Classe: Representação Gráfica (Diagrama) de uma Classe
+
+-----------------------
+| Nome da Clase       |
+-----------------------
+| Atributos da Classe |
+-----------------------
+| Métodos da Classe   |
+-----------------------
+
+
+Por exemplo, a representação de uma classe Conta (de banco):
+
+-----------------------
+| Conta               |
+-----------------------
+| - saldo: float      |
+| - numero: String    |
+-----------------------
+| + debitar()         |
+| + creditar()        |
+| + transferir()      |
+| + consultarSalado() |
+-----------------------
+
+Essa representação pode ser feita com mais detalhes:
+
+------------------------------
+| Conta                      |
+------------------------------
+| - saldo: float=0.0         |
+| - numero: String           |
+------------------------------
+| + debitar(float: valor)    |
+| + creditar(float: valor)   |
+| + transferir(float: valor) |
+| + consultarSalado()        |
+------------------------------
+
+Onde:
+
+    -/+ antes do atributos e métodos, são sinais de visibilidade indicando o 
+        que é público e o que é privado (o que pode ou não ser acessado, 
+        modificado por outras classes ou só pelo próprio objeto)
+
+    atributos são de um tipo e podem ser inicializados com determinado valor 
+        (por exemplo, =0.0)
+
+    métodos podem receber determinado parâmetro (de um tipo)
+
+
+ENCAPSULAMENTO (VISIBILIDADE)
+
+O encapsulamento é a visibilidade dos atributos (dados) dentro do objeto.
+
+Assim o objeto tem uma visão interna (como o objeto faz) e uma visão externa 
+(o que o objeto faz).
+
+Por exemplo, um telefone celular tem um funcionamento interno encapsulado 
+(escondido) do usuário. Para utilizar o telefone, por exemplo realizar uma 
+chamada ou enviar uma mensagem (visão externa), o usuário não precisa conhecer
+os detalhes internos da eletrônica do celular (visão interna). Ou seja, o 
+usuário não precisa saber como o funciona o celular por dentro, ele apenas 
+precisa saber utlizar o celular. 
+
+Assim, em se tratando de classes, o encapsulamento se dá pela visibilidade, que 
+são os modificadores de acesso.
