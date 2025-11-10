@@ -67,3 +67,22 @@ precisa saber utlizar o celular.
 
 Assim, em se tratando de classes, o encapsulamento se dá pela visibilidade, que 
 são os modificadores de acesso.
+
+
+MODIFICADORES DE ACESSO
+
+"public" (público; representado pelo sinal de "+" na notação UML): elementos 
+declarados como público podem ser acessados a partir de qualquer outra classe 
+(uma classe pode conversar com outra se seus métodos e/ou atributos estiverem 
+públicos);
+
+"private" (privado; representado pelo sinal de "-" na notação UML): elementos
+declarados como privados só podem ser acessdos pela própria classe;
+
+"protected" (protegido; representado pelo sinal "#" na notação UML): elementos 
+protegidos podem ser acessados pela própria classe e por suas decendentes (a 
+classe filha poderá acessar métodos e atributos da classe pai se eles forem 
+protegidos);
+
+"default" (padrão; representado pelo sinal de "~" na notação UML): elementos 
+padrão só podem ser acessados por classes do mesmo pacote.
