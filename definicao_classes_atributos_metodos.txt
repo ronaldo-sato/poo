@@ -1,0 +1,330 @@
+
+DEFINIÇÃO DE CLASSES - Sintaxe:
+
+modificador class NomeDaClasse {
+    CorpoDaClasse
+}
+
+    onde:
+    
+    "modificador" é o modificador de acesso e também é aplicado a classes;
+
+    "class" é a palavra reservada que especifica se tratar de uma classe;
+
+    "NomeDaClasse" é o nome da classe;
+
+    "CorpodaClasse" são os atributos, métodos e construtores da classe (veremos
+    a seguir). 
+
+
+DEFININDO ATRIBUTOS
+
+Cada atributo tem um tipo específico que caracteriza cada propriedade do objeto
+de uma classe.
+
+modificador class NomeDaClasse {
+    // Sintaxe declaração de atributos:
+    modificador tipo nomeDeAtributo;
+    modificador tipo nomeOutroAtributo;
+    ...
+}
+
+    onde:
+
+    "modificador" define o tipo de acesso;
+
+    "tipo" é o tipo do conteúdo que atributo armazena (Java é uma linguagem 
+
+    "fortemente tipada", ou seja, toda variável deve ter um tipo declarado);
+
+    ... indica outros atributos que a classe pode ter.
+
+Podemos ainda utilizar qualquer outra classe, definida anteriormente, para 
+representar um atributo em uma nova classe. Por exemplo, para armazenar texto 
+(de qualquer tamanho) utilizamos a classe String da API Java.
+
+Para exemplificar, suponha uma classe para conta de banco onde temos 3 atributos 
+privados, um do tipo float para representar o saldo, um que é uma String para 
+representar o número e por último outro que é uma classe Cliente para 
+representar o titular da conta:
+
+public class Conta {
+    // Atributos
+    private float saldo;
+    private String numero;
+    private Cliente titular;
+}
+
+CONVENÇÕES
+
+Cada classe pública será salva em um arquivo diferente e o nome do arquivo 
+deve ter o mesmo nome da classe seguido da extensão ".java".
+
+O nome da classe inicia-se com letra maiúscula e se for de nome composto usa-se 
+o padrão CamelCase (como em NomeDaMinhaClasse).
+
+(OBS: Java é case sensitive)
+
+Para nome de atributo segue-se o padrão Lower Camel Case, ou seja, devem iniciar
+com letra minúsculae caso o nome seja composto, as letras iniciais das palavras
+seguintes são com letra maiúscula.
+
+Não se deve abreviar os nomes dos atributos (além disso, toda variável deve 
+ter seu tipo declarado - Java é uma linguagem "fortemente tipada").
+
+
+DEFININDO MÉTODOS
+
+Um método é uma operação ou ação que consulta ou modifica os valores dos 
+atributos do objeto responsável pela sua execução.
+
+Todo método deve deixar explícito o tipo de dado, de valor a ser retornado. E 
+em caso do método não retornar valor, deve ser utilizado o tipo "void". E caso,
+o método retorne um valor, o retorno é dado pela palavra return.
+
+Para exemplificar, seguindo a classe banco:
+
+public class Conta {
+    private float saldo;
+    private String numero;
+
+    // Método debitar
+    public void debitar(double valor) {
+        saldo = saldo - valor;
+    }
+    ...
+}
+
+    onde (apenas o método):
+
+    debitar é um método recebe como parâmetro um valor do tipo double e retorna
+    um tipo void, isto é, não retorna nada, já que a ação desse método é apenas
+    atualizar o valor do saldo, ou seja, soma o valor ao saldo. 
+
+Outro exemplo, mas com retorno. Suponha um método que realiza a adição de dois 
+números:
+
+public int somarNumeros(int a, int b) {
+    int soma;
+    soma = a + b;
+    return soma;
+}
+
+    onde: 
+
+    o método somarNumeros recebe como parâmetro dois valores inteiros (a e b), 
+    realiza a soma desse valores (soma, que é um inteiro) e retorna esse valor. 
+
+PARÂMETROS são as informações externas ao objeto necessárias para a realização
+da ação. Cada parâmetro deve ter seu tipo de dado declarado. Caso haja mais de
+um parâmetro, estes serão separados por vírgula. Para nomes de parâmetros 
+utiliza-se a CONVENÇÃO Lower Came Case. 
+
+Para testar código sem necessidade de instalar o Java pode ser utilizado o site:
+
+https://www.compilejava.net/
+
+
+MÉTODOS DE ACESSO
+
+Devido ao encapsulamento, os dados dos objetos estão protegidos contra acesso 
+em outras classes, portanto, quando for necessário, devemos fornecer métodos 
+para que estes valores possam ser consultados (leitura) ou modificados 
+(escrita), e são comnhecidos como getters e setters.
+
+    MÉTODOS GETTERS: permitem consultar o valor dos atributos; não possuem 
+    parâmetros; o tipo de retorno deve coincidir com o tipo do atributo; o nome
+    é formado pela palavra get concatenada com o nome do atributo; exemplo:
+
+public class Conta {
+    private float saldo;
+
+    // Método Getter:
+    pubic float getSaldo() {
+        return saldo;
+    }
+}
+
+    MÉTODOS SETTERS: permitem modificar o valor dos atributos; possuem como
+    parâmetro o novo valor para o atributo; não retorna valores, portanto
+    utiliza o tipo void; o nome é formado pela palavra set concatenada com o
+    nome do atributo; exemplo:
+
+public class Conta {
+    private float saldo;
+
+    // Método Setter:
+    public void setSaldo(float novoSaldo) {
+        saldo = novoSaldo;
+    }
+}
+
+
+CONTRUTORES
+
+Construtores são métodos que são executados assim que um objeto é instanciado.
+A ideia dos construtores é que podem existir inúmeros objetos, inúmeras 
+instâncias mas que são inicializados com dados únicos, isto é, todos são da 
+mesma classe, mas os objetos são únicos. 
+
+Assim, são métodos "especiais" para inicializar objetos e que são chamados pela
+máquina virtual no momento em que o objeto está sendo criado, ou seja, não são 
+chamados diretamente pelo programador.
+
+Por CONVENÇÃO os métodos construtores possuem o mesmo nome das respectivas 
+classes.
+
+Métodos construtores são similares aos outros métodos, que devem inicializar 
+todos os atributos "obrigatórios" e não possuem um tipo de retorno (isto é, na 
+declaração do construtor não é informado o tipo de retorno porque ele não tem).
+
+Portanto, com a utilização dos construtores e dos métodos de acesso é possível
+garantir que os objetos não estarão em um estado inconsistente.
+
+Exemplo:
+
+public class Conta {
+    private float saldo;
+    private String numero;
+    private String observacoes;
+
+    // Construtor:
+    public Conta(float saldoInicial, String numeroConta) {
+        saldo = saldoInicial;
+        numero = numeroConta;
+    }
+}
+
+    onde: (perceba) o construtor Conta não possui tipo de retorno.
+
+Em suma, suponha uma classe Cachorro que tem o construtor Cachorro, que 
+inicializa pelo menos o nome do cachorro. Assim, ao instanciar um objeto, 
+cada cachorro terá um nome diferente e isso que vai diferenciar um cachorro do 
+outro.
+
+Então, os dados que devem ser inicalizados com um valor devem ser passados ao 
+construtor e atributos que não são inicializados no construtor, por CONVENÇÃO, 
+recebem um valor padrão:
+
+    zero para tipos numéricos;
+
+    False para valor booleano;
+
+    NULL para atributos de qualquer classe.
+
+Dependendo da necessidade da aplicação, alguns atributos podem ser inicializados
+com um valor padrão fixo, que não é informado pelo usuário. Por exemplo, suponha
+uma classe para cupom de desconto:
+
+public class CupomDesconto {
+    private String numero;
+    private boolean ativo;
+
+    // Construtor
+    public CupomDesconto(String num) {
+        numero = num;
+        ativo = true;  // todo cupom é inicializado como ativo
+    }
+}
+
+
+INSTANCIANDO UMA CLASSE / CRIANDO OBJETOS
+
+Para criar um objeto/instanciar uma classe, deve-se declarar uma variável do
+tipo da classe e atribuir a essa variável uma nova instância a partir da classe,
+usnado o método new. Exemplo:
+
+Conta c;
+c = new Conta;
+
+Ou podemos instanciar atribuindo em uma única linha:
+
+Conta c = new Conta();
+
+Após instanciar um novo objeto, é possível acessar seus métodos para efetuar
+as ações da qual a classe disponibiliza. Exemplo:
+
+// Instanciando objeto, passando parâmetros iniciais para o construtor da classe
+Conta c = new Conta(200.00, "12345-6");
+// Utilizando métodos da classe
+c.consultarSaldo();  // método que imprimir o saldo
+c.debitar(120.0);    // método para debitar um valor
+
+
+MÉTODO MAIN
+
+Uma classe, um programa ou sistema precisa ter um método main (método
+principal), para a execução das funcionalidades. Então para que uma classe 
+possa ser executada, ou seja, poder instanciar um objeto, definir atributos, 
+usar o construtor e os métodos, isso precisa ser feito no método main que por
+padrão segue a sintaxe:
+
+public static void main (String[] args){
+    // corpo
+    System.out.println("Hello!");
+}
+
+Então, suponha uma classe Conta, que tem um número da conta, que tem um saldo,
+que tem os métodos debitar e creditar, que tem o método getter getSaldo e o 
+método setter setSaldo, que tem um construtor que recebe o número da conta e o
+saldo inicial da conta:
+
+public class Conta{
+
+    // Atributos
+    private String numero;
+    private float saldo;
+
+    // Construtor
+    pubic Conta(String numeroConta, float saldoInicial){
+        numero = numeroConta;
+        saldo = saldoinicial;
+    }
+
+    // Método Main
+    public static void main(String[] args){
+
+        // Instanciando um objeto
+        Conta obj1 = new Conta("1234-5", 1000);
+        System.out.println("Saldo Inicial: " + obj1.getSaldo());
+        System.out.println("");
+        obj1.debitar(50);
+        System.out.println("Saldo Atual: " + obj1.getSaldo());
+        System.out.println("Numero da Conta: " + obj1.getNumero());
+
+        // Instanciando um segundo objeto
+        Conta obj2 = new Conta("2345-6", 10000);
+        System.out.println("Saldo Inicial: " + obj2.getSaldo());
+        System.out.println("");
+        obj2.debitar(1050);
+        System.out.println("Saldo Atual: " + obj2.getSaldo());
+        System.out.println("Numero da Conta: " + obj2.getNumero());
+
+    }
+
+    // Método Debitar
+    public void debitar(float valor){
+        saldo = saldo - valor;
+    }
+    
+    // Método Creditar
+    public void creditar(float valor){
+        saldo = saldo + valor;
+    }
+
+    // Métodos Getters
+    public float getSaldo(){
+        return saldo;
+    }
+
+    public String getNumero(){
+        return numero;
+    }
+
+    // Método Setter
+    public float setSaldo(float novoSaldo){
+        saldo = novoSaldo;
+    }
+
+}
+
