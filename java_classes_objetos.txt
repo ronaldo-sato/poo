@@ -1,0 +1,318 @@
+Linguagem Java - CARACTERÍSTICAS
+
+É uma linguagem orientada a objetos
+
+(O paradigma da Orientação a Objetos (OO) surgiu com a linguagem de programação
+Simula67, que foi a base do desenvolvimento da orientação a objetos; Simula67 
+foi a base para a linguagem de programação Smalltalk nos anos 70, considerada 
+a primeira linguagem autêntica de OO.)
+
+(Alan Kay, um dos criadores do Smalltalk, formulou a analogia biológica: "como
+seria um sistema de software que funcionaesse como um ser vivo?" - células 
+interagindo com outras células através do envio de mensagens; cada célula se 
+comportando como uma unidade autônoma; assim, a ideia foi como construir um 
+sistema de software a partir de agentes autônomos que interagem entre si.)
+
+Desenvolvida pela Sun Microsystems (hoje Oracle) em 1995
+
+Modelada no C++
+
+Projetada para ser pequena e simples, portável (para diferentes sistemas 
+operacionais e arquiteturas; Portabilidade: "write once, run anywhere" 
+- escreva uma vez, execute em qualquer lugar)
+
+Linguagem compilada em bytecodes, que é executado por uma máquina virtual (Java
+Virtual Machine; para rodar um programa em Java é preciso ter instalado a 
+máquina virtual)
+
+(Por isso o executável do programa de um programa em Java roda em diferentes 
+sistemas, porque quem executa é a máquina virtual)
+
+Possui extensa bilioteca com recursos de rede que facilita o trabalho com 
+protocolos TCP/IP, como HTTP e FTP. Além disso, pode executar programa via rede
+com segurança, através de restrições de execução
+
+Suporta caracteres Unicode (facilita a internacionalização)
+
+Distribuída com um vasto conjunto de bibliotecas (ou APIs)
+
+Possui facilidades para criação de programas distribuídos e multitarefas 
+(multiplas linhas sendo executadas num mesmo programa, ao invés de execução 
+apenas sequencial)
+
+Possui desalocação de memória automática por processo de coletor de lixo
+
+Programas em Java são formados por uma coleção de classes armazenadas 
+independentemente e que podem ser carregadas no momento de utilização (Carga 
+Dinâmica de Código: em determinada parte do programa quando for usada 
+determinada classe, a máquina virtual carrega essa classe dinamicamente a medida
+que for sendo necessária, ao invés de carregar todo o programa em memória como
+em muitas outras linguagens)
+
+
+ETAPAS PARA COMPILAÇÃO
+
+1) Criação do programa Java;
+
+2) Compilação do programa Java em bytecodes: o compilador vai transformar o 
+código.java em código.class (bytecodes), que representa as tarefas a serem 
+executadas na fase de execução (bytecodes são portáteis e independem de 
+plataforma);
+
+3) Carrega o programa Java em memória: o Java Virtual Machine (JVM) armazena o 
+programa em memória para executá-lo, efetuando o seu carregamento. O carregador
+de classe, pega o .class (gerado na Etapa 2) que têm os bytecodes do programa 
+e os transfere para a memória principal;
+
+4) Verificar os bytecodes: enquanto as classes são carregadas, o verificador 
+examina seus bytecodes para saber se são válidos;
+
+5) Executar o programa Java: a JVM executa os bytecodes utilizando uma 
+combinação de interpretação (Just in Time), conhecido como compilador Java 
+HotSpot, o qual traduz os bytecodes para a linguagem de máquina, quando a JVM 
+encontra novamente esses bytecodes.
+
+Muitas vezes, os programas em Java são distribuídos na forma de um arquivo .jar,
+como se fosse um .zip (pacote) com todos os .class para serem executados.  
+
+Todo programa em Java tem um método chamado main e todo programa em Java por 
+padrão, executa uma thread (iremos tratar sobre threads em aula posterior,
+mas foi um conceito apresentado em Sistemas Operacionais quando se falou em 
+ramificação de fluxo e processos).
+
+Programação Orientada a Objetos (POO) é um paradigma de programação em que 
+novos tipos de dados, além dos primitivos, são definidos conforme necessidade 
+através de classes.
+
+Orientação a Objetos (OO) é trazer coisas/fenômenos do mundo real para o mundo
+da computação/programação e isso é possível pelo uso de classes.
+
+
+CLASSES
+
+Classes são moldes/receitas/gabaritos que permitem a criação de novos objetos
+e descrevem as características comuns de vários objetos.
+
+Uma classe representa um conjunto de objetos com características afins, isto é,
+através da definição de uma classe, se estabelece, quais métodos/propriedades e
+métodos/ações objetos dessa classe terá. 
+
+    MÉTODOS: são as operações que podem ser executadas pelos objetos (então, 
+    tudo que os objetos podem fazer em relação a acessar atributos da classe ou
+    até mesmo outros métodos são feitos por métodos).
+
+    ATRIBUTOS: são acessados, em geral, por meio de métodos definids pela classe
+    e os modificadores de acesso definem as permissões de como isso pode ser 
+    feito (como será visto adiante).
+
+    CONSTRUTORES: são métodos com  mesmo nome da classe e não possui retorno.
+
+Ou seja, uma classe define o comportamento dos objetos através de seus métodos,
+e quais estados ele é capaz de manter através de seus atributos.
+
+Classes podem especificar entidades físicas, conceituais e de software.
+
+Definição de uma classe no contexto de orientação à objeto: ela vai 
+especificar um pacote de instruções (tipos de dados, operações que podem ser
+feitas, quem pode fazer essas operações, como essas operações são acessadas, 
+qual a hierarquia de acesso para determinadas operações que fazem parte 
+daquela classe,...)
+
+A declaração da classe se dá primeiramente por meio de um modificador de 
+acesso (visibilidade), que determina quem tem acesso a executar algumas 
+instâncias dessa classe (instâncias são objetos).
+
+Por padrão o nome da classe é o mesmo que o nome do programa.
+
+
+OBJETOS
+
+Trata-se de entidade que é capaz de salvar um estado (informação) e que oferece
+um conjunto de operações (comportamentos) para verificar ou alterar esse estado. 
+
+Em um modelo de sistema orientado a objetos, os componentes desse sistema são 
+representados por objetos (objetos representam entidades reais).
+
+Dessa forma, associa-se ao objeto:
+
+    Estado: é definido pelas propriedades, ou seja, os atributos que ele possui 
+    e pelos valores que tais propriedades assumem;
+
+    Comportamento: é definido pela forma como o objeto reage, quando seu estado 
+    muda e também pelo relacionamento com os outros objetos;
+
+    Identidade: cada objeto é único.
+
+Os objetos indicam o quão capaz é o sistema de guardar informações sobre o que
+está sendo abstraído e em seguida interagir com ele.
+
+Assim, objetos são abstrações que representam o mundo real, isto é, são as 
+entidades mais próximas do mundo real que conseguimos visualizar.
+
+Portanto, existe um gap semântico (distância) entre a realidade e sua 
+representação, dependendo de quanto o objeto consegue representar. Assim, 
+quanto mais curta a distância entre realidade e o modelo da realidade, mais 
+real fica o programa.
+
+
+ENCAPSULAMENTO (VISIBILIDADE)
+
+O encapsulamento trata da visibilidade de informações dentro do objeto. Isso
+permite modularidade e ocultação de informação (information hiding).
+
+Dessa forma, o encapsulamento cria um pacote de software cujos métodos e 
+variáveis são relacionados, ou seja, o encapsulamento envolve o relacionamento
+de variáveis. Já a ocultação de informação indica que, a única parete do objeto 
+que pode ser acessada pelo mundo externo, deve ser feita por meio de operações. 
+
+Assim o objeto tem uma visão interna (como o objeto faz) e uma visão externa 
+(o que o objeto faz).
+
+Por exemplo, um telefone celular tem um funcionamento interno encapsulado 
+(escondido) do usuário. Para utilizar o telefone, por exemplo realizar uma 
+chamada ou enviar uma mensagem (visão externa), o usuário não precisa conhecer
+os detalhes internos da eletrônica do celular (visão interna). Ou seja, o 
+usuário não precisa saber como o funciona o celular por dentro, ele apenas 
+precisa saber utilizar o celular. 
+
+Exemplos:
+
+    (Objeto) Lampada:
+                        Atributos: ligada/desligada
+                        Métodos: ligar/desligar
+
+    (Objeto) Pessoa:
+                        Atributos: nome, idade, altura
+                        Métodos: falar, comer, dormir
+
+    (Objeto) Carro:
+                        Atributos: cor, motor, tração, câmbio
+                        Métodos: ligar, desligar, acelerar, frear, virar
+
+Em suma:
+
+    Um objeto é uma instância de uma classe, uma instância é um objeto que 
+pertence a uma classe. A classe é um molde, ela é sempre a mesma, ela descreve
+características comuns a vários objetos, mas os objetos gerados por ela, são
+diferentes tendo características variadas. 
+
+    A classe é uma abstração e o objeto é a entidade concreta.
+
+    Quando falamos em definição de uma classse, isso significa tornar formal um
+tipo de dado e todas as operações que têm associação a este tipo. E quando 
+falamos em definir um objeto, significa criar variáveis de um tipo definido por 
+uma classe.
+
+
+Nas classes, o encapsulamento se dá pela visibilidade (modificadores de acesso).
+
+
+MODIFICADORES DE ACESSO (TIPOS DE ACESSO)
+
+Atributos e métodos são membros de uma classe e para definir o tipo de acesso 
+a esses membros, utilizamos os modificadores de acesso:
+
+"public" (público; representado pelo sinal de "+" na notação UML): elementos 
+declarados como público podem ser acessados por todas as entidades do sistema,
+ou seja, podem ser acessados a partir de qualquer outra classe (uma classe pode
+conversar com outra se seus métodos e/ou atributos estiverem públicos);
+
+"protected" (protegido; representado pelo sinal "#" na notação UML): elementos 
+protegidos podem ser acessados somente por classes da mesma hierarquia e mesmo 
+pacote, ou seja, podem ser acessados somente pela própria classe e por suas 
+decendentes (a classe filha poderá acessar métodos e atributos da classe pai 
+se eles forem protegidos);
+
+"private" (privado; representado pelo sinal de "-" na notação UML): elementos
+declarados como privados só podem ser acessados pela própria classe (por 
+métodos da própria classe), ou seja, uma classe externa não pode acessar ou o 
+método que acessa elementos privados precisa estar definido dentro da própria
+classe;
+
+"default" (padrão; representado pelo sinal de "~" na notação UML): elementos 
+padrão só podem ser acessados por classes do mesmo pacote.
+
+Portanto, a escolha dos tipos de acesso definem o escopo dos métodos e 
+atributos. Além disso, a definição dos tipos de acesso auxiliam na estabilidade
+e na segurança do acesso a atributos ou ainda em ocultá-lo. 
+
+É comum atributos serem "private" e desta forma, os métodos da própria classe é 
+que são responsáveis por modificar e recuperar o estado desses atributos. E em 
+geral, métodos setters e getters são públicos.
+
+
+PILARES DA POO
+
+ABSTRAÇÂO: ignora o que não é relevante e concentra-se apenas nos aspectos 
+principais do problema. Classes são abstração de conceitos.
+
+ENCAPSULAMENTO: capacidade de implementar dados e procedimentos que se 
+correlacionam numa mesma entidade. A ideia é não depender do funcionamento 
+interno, mas sim da sua interface.
+
+HERANÇA: caracteriza-se pela hierarquização das classes de um sistema.
+
+POLIMORFISMO: é um princípio em que um organismo pode surgir de formas distintas
+(conceito oriundo da Biologia). Indivíduos da mesma espécie possuem 
+características similares.
+
+MENSAGENS: quando um objeto emissor transmite uma requisição para um objeto 
+receptor para que este execute um comportamento (método) desejado. O objeto 
+receptor precisa ter os métodos definidos para conseguir interagir (métodos 
+getters e setters para recuperar ou modificar algu macesso, atributo que 
+pertence aquela classe). Os métodos sempre respondem um retorno à uma chamada.
+
+
+DEFINIÇÃO DE CLASSES - Sintaxe:
+
+modificador class NomeDaClasse {
+    CorpoDaClasse
+}
+
+    onde:
+    
+    "modificador" é o modificador de acesso e também é aplicado a classes;
+
+    "class" é a palavra reservada que especifica se tratar de uma classe;
+
+    "NomeDaClasse" é o nome da classe;
+
+    "CorpodaClasse" são os atributos, métodos e construtores da classe (veremos
+    a seguir). 
+
+
+DEFININDO ATRIBUTOS
+
+Cada atributo tem um tipo específico que caracteriza cada propriedade do objeto
+de uma classe.
+
+modificador class NomeDaClasse {
+    modificador tipo nomeDeAtributo;
+    modificador tipo nomeOutroAtributo;
+}
+
+    onde:
+
+    "modificador" define o tipo de acesso;
+
+    "tipo" é o tipo do conteúdo que atributo armazena (Java é uma linguagem 
+    "fortemente tipada", ou seja, toda variável deve ter um tipo declarado).
+
+
+CONVENÇÕES
+
+Cada classe pública será salva em um arquivo diferente e o nome do arquivo 
+deve ter o mesmo nome da classe seguido da extensão ".java".
+
+O nome da classe inicia-se com letra maiúscula e se for de nome composto usa-se 
+o padrão CamelCase (como em NomeDaMinhaClasse).
+
+(OBS: Java é case sensitive)
+
+Para nome de atributo segue-se o padrão Lower Camel Case, ou seja, devem iniciar
+com letra minúsculae caso o nome seja composto, as letras iniciais das palavras
+seguintes são com letra maiúscula.
+
+Não se deve abreviar os nomes dos atributos (além disso, toda variável deve 
+ter seu tipo declarado - Java é uma linguagem "fortemente tipada").
+
