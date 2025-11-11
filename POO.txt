@@ -19,9 +19,9 @@ dentre outros.
 CLASSES
 
 Classes são modelos de criação de objetos. Dessa forma, uma classe é a 
-representação de objetos e, possui atributos e métodos. Assim, quando um objeto
-é instanciado (criado), essa entidade terá dados e comportamentos conforme 
-definido em sua classe. 
+representação de objetos e, possui atributos (propriedades) e métodos (ações).
+Assim, quando um objeto é instanciado (criado), essa entidade terá dados e 
+comportamentos conforme definido em sua classe. 
 
 ATRIBUTOS: são as características ou propriedades que o objeto pode ter 
 (representam estados específicos do objeto).
@@ -30,7 +30,8 @@ MÉTODOS: são as ações que um objeto pode realizar (manipulam os atributos do
 objeto para realizar tarefas específicas).
 
 Uma classe representa uma ideia ou conceito do mundo externo e agrupa objetos
-com propriedades similares. 
+com propriedades similares (representa um conjunto de objetos com 
+características afins). 
 
 As classes são os blocos de construção mais importantes dos sistemas orientados
 a objetos, e devem possuir responsabilidades bem definidas na aplicação (o 
@@ -56,7 +57,7 @@ caso do carro ter problemas, mas no caso da programação os objetos tem um
 funcionamento previsível). 
 
 
-PRINCÍPIOS DA POO
+PRINCÍPIOS DA POO (Os 4 Pilares da POO)
 
 ABSTRAÇÃO: é a simplificação de um problema (complexo, do mundo real), focando 
 nos aspectos essenciais para um determinado contexto.
