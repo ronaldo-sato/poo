@@ -263,56 +263,101 @@ getters e setters para recuperar ou modificar algu macesso, atributo que
 pertence aquela classe). Os métodos sempre respondem um retorno à uma chamada.
 
 
-DEFINIÇÃO DE CLASSES - Sintaxe:
+ENCAPSULAMENTO
 
-modificador class NomeDaClasse {
-    CorpoDaClasse
+Em POO, o encapsulamento significa dividir o programa em partes de maneira mais
+isolada possível. 
+
+Vantagens:
+
+Isso torna o software/programa mais flexível, fácil de modificar e de 
+implementar novas funcionalidades; permite controlar o acesso aos artributos e 
+métodos de uma classe, protegendo os dados que serão manipulados em uma classe 
+qualquer; e evita que os dados de uma aplicação sofram acessos indevidos.
+
+A linguagem Java permite e utiliza muito o conceito de encapsulamento.
+
+O encapculamento também permite a ocultação da informação (information hiding),
+que é o mecanismo para restringir o acesso a alguns dos componentes do objeto. 
+
+Então, a ocultação da informação está relacionada à restrição do acesso enquanto
+o encapculamento está relacionado a separação do programa em partes, ao 
+isolamento das partes. 
+
+O encapsulamento é um conceito da POO em que os estados dos objetos (variáveis 
+de classe) e seus comportamentos (métodos da classe) são agrupados em conjunto
+segundo o seu grau de relação.
+
+A ocultação da informação é parte do encapsulamento, mas é mais do que esconder 
+os dados. A ocultação da informação é um critério base para modularizar 
+sistemas, levando em conta a ocultação das decisões de desenho do projeto, que 
+são suscetíveis a mudanças. 
+
+Em suma, não é preciso saber como é feita a lógica de determinados métodos, pois
+é somente preciso chamá-los e utilizar seus resultados. 
+
+
+NÍVEIS DE ENCAPSULAMENTO
+
+Nível de classe: quando determinamos o acesso de uma classe inteira (public ou 
+package-private).
+
+Nível de membro: quando determinamos o acesso de atributos ou métodos de uma 
+classe que podem ser public, private, protected, package-private (depende de
+atributo).
+
+Para ter um método encapsulado utilizamos um modificador de acesso, além do 
+tipo de retorno dele.
+
+Na prática, o encapsulamento é feito por getters e setters:
+
+    Setters: métodos que retornam o valor que foi solicitado, mas não prejudica
+    a integridade do dado.
+
+    Getters: métodos que recebem como argumento uma informação que pode ser de 
+    qualquer tipo de dado suportado pela linguagem, o que evita acessos 
+    indevidos.
+
+Para exemplificar o funcionamento do encapsulamento, suponha um sistema de 
+vendas em que temos diversos tipos de cadastros (funcionários, usuários, 
+gerentes, clientes, produtos). Nesse caso, separar o que pode ser acessado e 
+como pode ser acessado, diminui erros em acessar algum atributo de forma não
+autorizada.
+
+No encapsulamento, os atributos das classes são do tipo "private" e para esses 
+modificadores é preciso criar métodos setters e getters para alterar ou acessar
+o valor de uma propriedade.
+
+Exemplificando o encapsulamento para uma classe Funcionario:
+
+// Como é uma classe pública, pode ser acessada por outras classes
+public class Funcionario(){
+
+    // Atributos privados, não temos como acessar os valores senão por meio de
+    // um método
+    private double salario;
+    private String nome;
+
+    // Método getter para o nome
+    public String getNome(){
+        return nome;
+    }
+
+    // Método setter para o nome
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+
+    // Método getter para o salario
+    public double getSalario(){
+        return salario;
+    }
+
+    // Método setter para o salario
+    public setSalario(double salario){
+        this.salario = salario;
+    }
+
 }
 
-    onde:
-    
-    "modificador" é o modificador de acesso e também é aplicado a classes;
-
-    "class" é a palavra reservada que especifica se tratar de uma classe;
-
-    "NomeDaClasse" é o nome da classe;
-
-    "CorpodaClasse" são os atributos, métodos e construtores da classe (veremos
-    a seguir). 
-
-
-DEFININDO ATRIBUTOS
-
-Cada atributo tem um tipo específico que caracteriza cada propriedade do objeto
-de uma classe.
-
-modificador class NomeDaClasse {
-    modificador tipo nomeDeAtributo;
-    modificador tipo nomeOutroAtributo;
-}
-
-    onde:
-
-    "modificador" define o tipo de acesso;
-
-    "tipo" é o tipo do conteúdo que atributo armazena (Java é uma linguagem 
-    "fortemente tipada", ou seja, toda variável deve ter um tipo declarado).
-
-
-CONVENÇÕES
-
-Cada classe pública será salva em um arquivo diferente e o nome do arquivo 
-deve ter o mesmo nome da classe seguido da extensão ".java".
-
-O nome da classe inicia-se com letra maiúscula e se for de nome composto usa-se 
-o padrão CamelCase (como em NomeDaMinhaClasse).
-
-(OBS: Java é case sensitive)
-
-Para nome de atributo segue-se o padrão Lower Camel Case, ou seja, devem iniciar
-com letra minúsculae caso o nome seja composto, as letras iniciais das palavras
-seguintes são com letra maiúscula.
-
-Não se deve abreviar os nomes dos atributos (além disso, toda variável deve 
-ter seu tipo declarado - Java é uma linguagem "fortemente tipada").
 
