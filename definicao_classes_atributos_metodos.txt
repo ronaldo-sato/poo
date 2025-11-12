@@ -11,7 +11,7 @@ modificador class NomeDaClasse {
 
     "class" é a palavra reservada que especifica se tratar de uma classe;
 
-    "NomeDaClasse" é o nome da classe;
+    "NomeDaClasse" é o nome da classe (padrão CamelCase);
 
     "CorpodaClasse" são os atributos, métodos e construtores da classe (veremos
     a seguir). 
@@ -37,7 +37,8 @@ modificador class NomeDaClasse {
 
     "fortemente tipada", ou seja, toda variável deve ter um tipo declarado);
 
-    ... indica outros atributos que a classe pode ter.
+    ... indica o restante do CorpodaClasse (outros atributos, métodos e 
+    construtores que a classe pode ter).
 
 Podemos ainda utilizar qualquer outra classe, definida anteriormente, para 
 representar um atributo em uma nova classe. Por exemplo, para armazenar texto 
@@ -45,7 +46,7 @@ representar um atributo em uma nova classe. Por exemplo, para armazenar texto
 
 Para exemplificar, suponha uma classe para conta de banco onde temos 3 atributos 
 privados, um do tipo float para representar o saldo, um que é uma String para 
-representar o número e por último outro que é uma classe Cliente para 
+representar o número da conta e por último outro que é uma classe Cliente para 
 representar o titular da conta:
 
 public class Conta {
@@ -66,7 +67,7 @@ o padrão CamelCase (como em NomeDaMinhaClasse).
 (OBS: Java é case sensitive)
 
 Para nome de atributo segue-se o padrão Lower Camel Case, ou seja, devem iniciar
-com letra minúsculae caso o nome seja composto, as letras iniciais das palavras
+com letra minúscula e caso o nome seja composto, as letras iniciais das palavras
 seguintes são com letra maiúscula.
 
 Não se deve abreviar os nomes dos atributos (além disso, toda variável deve 
@@ -80,7 +81,7 @@ atributos do objeto responsável pela sua execução.
 
 Todo método deve deixar explícito o tipo de dado, de valor a ser retornado. E 
 em caso do método não retornar valor, deve ser utilizado o tipo "void". E caso,
-o método retorne um valor, o retorno é dado pela palavra return.
+o método retorne um valor, o retorno é dado pela palavra "return".
 
 Para exemplificar, seguindo a classe banco:
 
@@ -90,7 +91,7 @@ public class Conta {
 
     // Método debitar
     public void debitar(double valor) {
-        saldo = saldo - valor;
+        saldo = saldo - valor;  // debita valor do saldo
     }
     ...
 }
@@ -99,7 +100,7 @@ public class Conta {
 
     debitar é um método recebe como parâmetro um valor do tipo double e retorna
     um tipo void, isto é, não retorna nada, já que a ação desse método é apenas
-    atualizar o valor do saldo, ou seja, soma o valor ao saldo. 
+    atualizar o valor do saldo, ou seja, subtrai o valor do saldo. 
 
 Outro exemplo, mas com retorno. Suponha um método que realiza a adição de dois 
 números:
@@ -174,9 +175,10 @@ chamados diretamente pelo programador.
 Por CONVENÇÃO os métodos construtores possuem o mesmo nome das respectivas 
 classes.
 
-Métodos construtores são similares aos outros métodos, que devem inicializar 
-todos os atributos "obrigatórios" e não possuem um tipo de retorno (isto é, na 
-declaração do construtor não é informado o tipo de retorno porque ele não tem).
+Similares aos outros métodos, os métodos construtores inicializam (devem 
+inicializar) todos os atributos "obrigatórios" e não possuem um tipo de retorno 
+(isto é, na declaração do construtor não é informado o tipo de retorno pois 
+ele não tem).
 
 Portanto, com a utilização dos construtores e dos métodos de acesso é possível
 garantir que os objetos não estarão em um estado inconsistente.
@@ -197,18 +199,18 @@ public class Conta {
 
     onde: (perceba) o construtor Conta não possui tipo de retorno.
 
-Em suma, suponha uma classe Cachorro que tem o construtor Cachorro, que 
-inicializa pelo menos o nome do cachorro. Assim, ao instanciar um objeto, 
-cada cachorro terá um nome diferente e isso que vai diferenciar um cachorro do 
-outro.
+Enfim, para exemplificar, suponha uma classe Cachorro que tem o construtor 
+Cachorro, que inicializa pelo menos o nome do cachorro. Assim, ao instanciar 
+um objeto, cada cachorro terá um nome diferente e isso que vai diferenciar 
+um cachorro do outro.
 
 Então, os dados que devem ser inicalizados com um valor devem ser passados ao 
 construtor e atributos que não são inicializados no construtor, por CONVENÇÃO, 
-recebem um valor padrão:
+recebem um valor padrão, sendo:
 
     zero para tipos numéricos;
 
-    False para valor booleano;
+    FALSE para valor booleano;
 
     NULL para atributos de qualquer classe.
 
@@ -285,18 +287,18 @@ public class Conta{
     public static void main(String[] args){
 
         // Instanciando um objeto
-        Conta obj1 = new Conta("1234-5", 1000);
+        Conta obj1 = new Conta("1234-5", 3000);
         System.out.println("Saldo Inicial: " + obj1.getSaldo());
-        System.out.println("");
-        obj1.debitar(50);
+        System.out.println("Debitando 500");
+        obj1.debitar(500);
         System.out.println("Saldo Atual: " + obj1.getSaldo());
         System.out.println("Numero da Conta: " + obj1.getNumero());
 
         // Instanciando um segundo objeto
         Conta obj2 = new Conta("2345-6", 10000);
         System.out.println("Saldo Inicial: " + obj2.getSaldo());
-        System.out.println("");
-        obj2.debitar(1050);
+        System.out.println("Debitando 2000");
+        obj2.debitar(2000);
         System.out.println("Saldo Atual: " + obj2.getSaldo());
         System.out.println("Numero da Conta: " + obj2.getNumero());
 
