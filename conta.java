@@ -53,6 +53,14 @@ public class Conta {
         System.out.println("Numero da conta:" + obj1.numero);
         System.out.println("Saldo:" + obj1.saldo);
 
+        // OBS: Como aqui o acesso aos atributos está sendo feito na main
+        // dentro da própria classe, como eles são privados, podemos acessá-los
+        // diretamente pela propriedade, por exemplo para o número da conta, 
+        // acessamos obj1.numero. Caso fosse uma outra classe acessando essas 
+        // propriedades, elas teriam que acessá-los por método getter, já que 
+        // esses atributos são privados (só podem ser acessados pela própria
+        // classe)
+
         System.out.println("----------");
 
         // Instanciando um 2o objeto
