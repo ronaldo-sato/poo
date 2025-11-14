@@ -47,6 +47,7 @@ public class Conta {
     // Método Main
 
     public static void main(String[] args) {
+        // Instanciando um 1o objeto
         Conta obj1 = new Conta("1234", 500);
         obj1.creditar(50);
         System.out.println("Numero da conta:" + obj1.numero);
@@ -54,8 +55,9 @@ public class Conta {
 
         System.out.println("----------");
 
-        Conta obj2 = new Conta("1234", 500);
-        obj2.creditar(50);
+        // Instanciando um 2o objeto
+        Conta obj2 = new Conta("2345", 200);
+        obj2.debitar(30);
         System.out.println("Numero da conta:" + obj2.numero);
         System.out.println("Saldo:" + obj2.saldo);
     }
