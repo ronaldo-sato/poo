@@ -38,9 +38,9 @@
 // redefinido na classe filha, assim, os métodos tem a mesma assinatura e o 
 // mesmo tipo de retorno.
 
-// Mas, se no caso for necessário utilizar o comportamento definido pela classe mãe
-// será preciso chamar a implementação da classe mãe utilizando a palavra "super", 
-// sobrepondo então o método da classe filha (overriding).
+// Mas, se no caso for necessário utilizar o comportamento definido pela classe
+// mãe será preciso chamar a implementação da classe mãe utilizando a palavra 
+// "super", sobrepondo então o método da classe filha (overriding).
 
 public class PolimorfismoSuperclasse {
     public void metodoImprime(){
@@ -48,8 +48,10 @@ public class PolimorfismoSuperclasse {
     }
 }
 
+// Aqui a Subclasse (classe filha) está herdando (extends) as propriedades 
+// da classe mãe (Superclasse)
 public class PolimorfismoSubclasse extends PolimorfismoSuperclasse {
-    
+
     // Polimorfismo: Sobreescrevendo o método da Superclasse
     public void metodoImprime(){
         // super faz referência a superclasse
@@ -58,7 +60,12 @@ public class PolimorfismoSubclasse extends PolimorfismoSuperclasse {
     }
 
     public static void main(String[] args) {
+        // Instanciando um objeto da Subclasse
         PolimorfismoSubclasse c = new PolimorfismoSubclasse();
+        // Chamando o método dentro da Subclasse, portanto chama o método desta,
+        // porém a sobreescrita desse método chama o métoda da classe mãe, faz 
+        // referência a Superclasse, dessa forma, traz o comportamento da classe
+        // mãe
         c.metodoImprime();
     }
 
