@@ -2,8 +2,8 @@
 
 // Uma classe, um programa ou sistema precisa ter um método main (método
 // principal), para a execução das funcionalidades. Então para que uma
-// classe possa ser executada, ou seja, poder instanciar um objeto, definir
-// atributos, usar construtor e os métodos, isso precisa ser feito no 
+// classe possa ser executada, ou seja, para poder instanciar um objeto,
+//  definir atributos, usar construtor e métodos, isso precisa ser feito no 
 // método main que por padrão segue a sintaxe:
 
 // public static void main (String[] args){
