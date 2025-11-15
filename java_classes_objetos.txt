@@ -361,3 +361,368 @@ public class Funcionario(){
 }
 
 
+HERANÇA
+
+Tomando como base o mundo real, os seres humanos herdam características de seus 
+pais. Então, atributos como cor da pele, cor dos olhos e outros, assim como, até
+mesmo comportamentos, podem ser herdados. 
+
+Assim, da mesma forma seguindo essa ideia de herdar características, em POO as
+classes podem herdar atributos (propriedades) e métodos (comportamentos), 
+o que é chamado de herança.
+
+Assim, em POO, a classe que terá suas características herdadas é chamada de 
+classe mãe e também de superclasse ou de classe mais genérica, e as classes que 
+herdam essas características são chamadas de classes filhas. 
+
+Para exemplificar, suponha uma classe Pessoa mais genérica (em notação UML):
+
+                            -----------------------
+    ^                       | Pessoa              |   classe mãe            |
+    |                       -----------------------   superclasse           |
+    |           2 atributos | nome                |   classe mais genérica  |
+    |                       | endereço            |                         |
+    |                       -----------------------                         |
+    |             2 métodos | comer()             |                         |
+    |                       | dormir()            |                         |
+    |                       -----------------------                         |
+    |                                                                       |
+    | generalização                                          especialização |
+    |                                                                       |
+    | -----------------------                     -----------------------   |
+    | | Estudante           |   classes filhas    | Empregado           |   |
+    | -----------------------     subclasses      -----------------------   |
+    | | anoEscolar          |                     | categoria           |   |
+    | -----------------------                     | função              |   |
+    | | matricular()        |                     -----------------------   |
+    | | estudar()           |                     | trabalhar()         |   |
+    | -----------------------                     | reabastecer()       |   v
+                                                  -----------------------
+
+      classe mais específicas:                    classe mais específicas:
+      3 atributos                                 4 atributos
+      4 métodos                                   4 métodos
+
+Assim, as classes filhas Estudante e Empregado além de possuir seus próprios
+métodos e atributos, herdam os atributos e métodos da classe Pessoa.
+
+Aqui nesse exemplos, os atributos da Pessoa é nome e endereço e os métodos é 
+comer e dormir. Estudantes e empregados também são pessoas, então veja que um
+estudante tem nome e endereço assim como o empregado. Ambos também podem comer
+e dormir. Mas o estudante tem um ano escolar, ele pode ser matriculado em uma 
+turma e pode estudar. Já o empregado tem uma categoria e uma função, ele 
+trabalha e uma função é reabastecer. 
+
+Portanto, quando criamos classes mais específicas, em geral, elas herdam 
+características de classes mais genéricas.
+
+Olhando do ponto de vista das subclasses, ou o contexto de cima para baixo, 
+chamamos esse processo de especialização. E quando olhamos debaixo para cima,
+chamamos de generalização.
+
+Assim, classes mais genéricas podem especializar outras e classes filhas (ou 
+classes mais especializadas) podem generalizar aspectos da classe mãe (ou 
+classe mais genéricas).
+
+Dessa forma, a herança pode ocorrer ou ser repetida em cascata. Por exemplo:
+
+                Animal                      ---> superclasse
+
+    Selvagem            Doméstico           ---> subclasses
+
+                    Gato          Cachorro  ---> subclasses
+
+Em Java, no conceito de herança usamos a nomenclatura de classes mãe, também 
+chamadas de super classe ou classe base, e classes filha, também chamadas de 
+subclasse ou classe derivada.
+
+A classe mãe é a classe mais geral e de onde as outras classes herdam atributos
+e métodos (membros) e a classe filha é mais especializada (herda os membros da
+classe mãe).
+
+Então, no exemplo acima, a classe Animal é a classe mãe (super classe), da qual
+as classes filhas (subclasses) Selvagem e Doméstico herdam membros, e seguindo
+a hierarquia, a classe Doméstico ainda tem duas classes filhas (subclasses), 
+as classes Gato e Cachorro, que são mais especializadas.
+
+Em Java, o uso de herança se dá pela palavra reservada "extends". Então,
+seguindo a hierarquia acima, por exemplo:
+
+public class Animal {
+    // Corpo da classe mãe
+}
+
+public class Cachorro extends Animal {
+    // Corpo da classe filha
+}
+
+Dessa forma, quando for instanciado um objeto da classe Cachorro, ele irá herdar
+as características e propriedades da classe Animal, além de ter seus atributos e
+métodos específicos.
+
+VANTAGENS DA HERANÇA
+
+    Permitir reuso de código (evita reescrever código)
+
+    Possibilita especializar soluções gerais já existentes ()
+
+OBS: Todo objeto da subclasse é um objeto da superclasse (classe mãe), mas o 
+contrário não é válido. Então seguindo o exemplo acima, um o objeto cachorro 
+também é um objeto animal.
+
+Portanto, a classe filha herda todos os membros da classe mãe:
+
+    Membros privados: são ocultos na classe filha;
+
+    Membros públicos: acessíveis na classe filha;
+
+    Membros protegidos: são acessíveis na subclasse (e outras do mesmo pacote).
+
+CONCEITOS
+
+Construtores não são membros da classe, mas as classes filhas podem chamar um
+construtor da classe mãe.
+
+Podemos declarar um campo na classe filha com o mesmo nome da classe mãe, mesmo
+que os tipos sejam diferentes. 
+
+Podemos sobreescrever um método da classe mãe, declarando um método com a mesma
+assinatura (desde que o conjunto de parâmetros entre os métodos sejam 
+diferentes), o que é chamado de polimorfismo (veremos abaixo).
+
+Como já visto, podemos declarar novos métodos e campos na classe filha, o que 
+é chamado de especialização.
+
+Imagine que temos que modelar uma escola, que tem professores, alunos, 
+funcionários,considerando que todos são pessoas. Então, Pessoa seria nossa 
+classe mãe e as classes Professores, Funcionários e Alunos seriam as classes
+filhas. 
+
+public class Pessoa {
+    public String nome;
+    public String cpf;
+    public Date dataNascimento;
+
+    // Construtor
+    public Pessoa(String nome, String cpf, Date dataNascimento){
+        this.nome = nome;
+        this.cpf = cpf;
+        this.dataNascimento = dataNascimento;
+    }
+}
+
+Então, estendendo essa a classe Pessoa para as demais classes:
+
+// Subclasse Aluno
+public class Aluno extends Pessoa {
+    // Atributos especializados
+    public String matricula;
+    // Construtor
+    public Aluno(String nome, String cpf, Date dataNascimento){
+        super(nome, cpf, dataNascimento);
+    }
+}
+
+// Subclasse Professor
+public class Professor extends Pessoa {
+    // Atributos especializados
+    public double salario;
+    public String disciplina;
+    // Construtor
+    public Professor(String nome, String cpf, Date dataNascimento){
+        super(nome, cpf, dataNascimento);
+    }
+}
+
+// Subclasse Funcionario
+public class Funcionario extends Pessoa {
+    // Atributos especializados
+    public double salario;
+    public Date dataAdmissao;
+    public String cargo;
+    // Construtor
+    public Funcionario(String nome, String cpf, Date dataNascimento){
+        super(nome, cpf, dataNascimento);
+    }
+}
+
+
+POLIMORFISMO
+
+Caracteriza-se por sobreescrever/reescrever um método da classe mãe, declarando
+um método com a mesma assinatura. 
+
+A vantagem disso, é que os objetos vão ter a capacidade de responder a uma 
+mesma mensagem (chamada de métodos) de modos diferentes.
+
+Por isso, a reescrita é também chamada de sobreposição.
+
+Por exemplo no mundo real, carro, bibicleta, ônibus se movem. Sendo mover um 
+método dessas classes, esse método poderá ser especializado em cada 
+classe para mover o respectivo tipo, já que se movem de formas diferentes 
+(então será o mesmo método mas com assinaturas diferentes, já que a ação
+será a mesma mas o modo será distinto). 
+
+Em relação à execução do programa quanto à sobreposição de métodos, a JVM 
+(Java Virtual Machine) procura a implementação mais especializada seguindo a
+hierarquia de baixo para cima, ou seja, da classe mais específica (filha) para
+a classe mais genérica (mãe). Então, se o método estiver sobreescrito na classe
+filha, estando implementado tanto na classe filha como na classe mãe, primeiro
+o método é buscado primeiro na filha e depois na mãe. 
+
+Se o método não for definido na classe filha, a JVM procura pela implementação
+da classe mãe. Então, ao chamar um método na classe filha que não foi definido
+nela, naturalmente estará sendo usado o método da classe mãe, mas primeiro a JVM 
+procura por esse método (com mesmo nome embora com assinatura diferente) na 
+classe filha, e não encontrando a JVM assume que o método usado é o da classe 
+mãe, ainda que esse método esteja sendo usado dentro de uma classe mais 
+especializada.
+
+Quando um método é sobreescrito na classe filha, ele passa a ter o comportamento
+padrão dessa classe, embora seja possível acessar o método da superclasse.
+
+Portanto, a sobreescrita de métodos ocorre quando um método da classe mãe é 
+redefinido na classe filha, assim, os métodos tem a mesma assinatura e o mesmo 
+tipo de retorno.
+
+Mas, se no caso for necessário utilizar o comportamento definido pela classe mãe
+será preciso chamar a implementação da classe mãe utilizando a palavra "super", 
+sobrepondo então o método da classe filha (overriding).
+
+Isso ocorreu nas subclasses Aluno, Professor e Funcionário acima, onde nos 
+respectivos construtores ao invés de reescrevermos as mesmas definições de 
+parâmetros como feito na classe Pessoa, ao usar super o construtor de cada 
+subclasse assume o comportamento da classe mãe.
+
+Para exemplificar, suponha uma classe Carro:
+
+public class Carro{
+    private int velocidade;
+
+    // Construtor
+    public Carro(int velocidadeInicial){
+        velocidade = velocidadeInicial;
+    }
+
+    // Método Acelera
+    public void acelera(){
+        velocidade++;
+    }
+
+    // Método Freia
+    public void freia(){
+        velocidade--;
+    }
+}
+
+Vamos implementar outra classe CarroCorrida que vai herdar a classe Carro:
+
+public class CarroCorrida extends Carro{
+
+    // Construtor
+    public CarroCorrida(int velocidadeInicial){
+        super(velocidadeInicial)
+    }
+
+    // Reescrita do Método Acelera
+    public void acelera(){
+        velocidade += 5;
+    }
+}
+
+Portanto, a instanciar um objeto CarroCorrida, esse objeto herda da classe mãe
+Carro seus atributos e métodos:
+
+CarroCorrida carro = new CarroCorrida();
+
+Assim ao chamar o método acelera dentro da classe CarroCorrida, a velocidade 
+será incrementada em 5, enquanto que se chamado dentro da classe Carro, será 
+incrementada de 1.
+
+carro.acelera();
+
+Como o objeto carro é um carro de corrida e todo carro de corrida é um carro, 
+o carro de corrida tem o método acelera assim como um carro tem o mesmo método,
+mas como o objeto carro de corrida herda e reescreve o método acelera, ao chamar
+o método acelera ele chama o método da classe filha.
+
+A palavra "super" tem função parecida com a palavra "this" e esta é usada para
+referenciar o próprio objeto, o que permite distinguir variáveis locais e 
+campos do objeto que contém os mesmos nomes.
+
+Anteriormente, utilizamos algumas vezes a palavra this e como exemplo veja a 
+classe Pessoa:
+
+public class Pessoa {
+    public String nome;
+    public String cpf;
+    public Date dataNascimento;
+
+    // Construtor
+    public Pessoa(String nome, String cpf, Date dataNascimento){
+        this.nome = nome;
+        this.cpf = cpf;
+        this.dataNascimento = dataNascimento;
+    }
+}
+
+Observe que no construtor utilizamos "this" para referenciar o próprio objeto 
+para distinguir o atributo nome, cpf e dataNascimento, dos respectivos 
+parâmetros que o construtor recebe. Se a referência não tivesse sido feito, não
+haveria como distinguir o nome atributo de nome parâmetro, assim o parâmetro 
+em si precisaria ser nomeado de outra forma, por exemplo, nomePessoa.
+
+Em herança, a palavra "super" é usada para acessar campos e métodos da 
+superclasse (campos ocultos, métodos sobrescritos, construtores da superclasse).
+
+
+CLASSES E MÉTODOS FINAL 
+
+O modificador "final" indica que o método definido com ele não pode ser 
+sobreescrito em uma subclasse. Este modificar pode ser aplicado em classes, 
+métodos e atributos. 
+
+Métodos privados são acessíveis apenas dentro da classe definida, não podendo
+sobreescrever um método private em uma subclasse, quando usando o modificador 
+final.
+
+Para exemplificar, suponha a classe:
+
+public final class ClasseFinal {
+    protected final String nome;
+    protected final int idade;
+    protected final int[] vetor;
+
+    // Primeiro construtor
+    public ClasseFinal(){
+        idade = 22;
+        nome = "Univesp";
+        vet = new int[100];
+    }
+
+    // Segundo construtor com mesma assinatura
+    public ClasseFinal(int _idade, String _nome, int tamanho){
+        idade = _idade;
+        nome = _nome;
+        vet = new int[tamanho];
+    }
+
+    public final void imprime(final int pos){
+        System.out.println(vetor[pos]);
+    }
+
+    public final void inicializa(){
+        for (int x=0; x < vetor.length; x++){
+            vet[x] = x*5;
+        }
+    }
+
+}
+
+Dessa forma, ao chamar métodos final dentro da main ou fazer uso de herança 
+em outra classe, esses métodos e atributos definidos com final não poderão 
+ser alterados.
+
+
+
+
