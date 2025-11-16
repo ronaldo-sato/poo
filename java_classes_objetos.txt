@@ -7,8 +7,8 @@ Simula67, que foi a base do desenvolvimento da orientação a objetos; Simula67
 foi a base para a linguagem de programação Smalltalk nos anos 70, considerada 
 a primeira linguagem autêntica de OO.)
 
-(Alan Kay, um dos criadores do Smalltalk, formulou a analogia biológica: "como
-seria um sistema de software que funcionaesse como um ser vivo?" - células 
+(Alan Kay, um dos criadores do Smalltalk, formulou a analogia biológica: 
+"como seria um sistema de software que funcionasse como um ser vivo?" - células 
 interagindo com outras células através do envio de mensagens; cada célula se 
 comportando como uma unidade autônoma; assim, a ideia foi como construir um 
 sistema de software a partir de agentes autônomos que interagem entre si.)
@@ -572,8 +572,8 @@ o método é buscado primeiro na filha e depois na mãe.
 
 Se o método não for definido na classe filha, a JVM procura pela implementação
 da classe mãe. Então, ao chamar um método na classe filha que não foi definido
-nela, naturalmente estará sendo usado o método da classe mãe, mas primeiro a JVM 
-procura por esse método (com mesmo nome embora com assinatura diferente) na 
+nela, naturalmente estará sendo usado o método da classe mãe, mas primeiro a 
+JVM procura por esse método (com mesmo nome embora com assinatura diferente) na 
 classe filha, e não encontrando a JVM assume que o método usado é o da classe 
 mãe, ainda que esse método esteja sendo usado dentro de uma classe mais 
 especializada.
@@ -722,6 +722,207 @@ public final class ClasseFinal {
 Dessa forma, ao chamar métodos final dentro da main ou fazer uso de herança 
 em outra classe, esses métodos e atributos definidos com final não poderão 
 ser alterados.
+
+
+INTERFACES
+
+O conceito de interface tem como principal objetivo criar um contrato em que a
+classe implementadora deve obrigatoriamente obedecer. A ideia é que a classe 
+interface, apenas indique quais métodos precisam ser implementados, portanto 
+ela é uma classe abstrata que apenas contem a assinatura dos métodos, ela não
+contém a implementação desses métodos (não possuem corpo).
+
+Em Java, para usar interfaces isso é possível com o uso da palavra "interface".
+
+No contexto de interface, quando programamos um software não importa como será
+feita a implementação, pois o mais importante é saber a definição do contrato, 
+para garantir que o software desenvolvido por um grupo se comunique com outro 
+seguindo esse contrato.
+
+Um exemplo do mundo real é o padrão USB (Universal Serial Bus), que é utilizado 
+por inúmeros dispositivos computacionais. Dessa forma, as empresas que criam 
+dispositivos precisam apenas conhecer o protocolo de uma conexão USB.
+
+Assim, embora interface seja uma classe abstrata, ela é uma classe abstrata 
+especial, pois possui apenas métodos abstratos e nenhuma implementação. Ou seja,
+a classe abstrata não implementa nada, ela só define um contrato (o que precisa
+ser seguidos: os métodos assinados na interface). 
+
+Para a declaração de interface é usada a palavra reservada "interface", veja o 
+exemplo de uma interface de uma classe:
+
+public interface MinhaPrimeiraInterface{
+    public void metodoUm();
+    public int metodoDois();
+    public String metodoTres(String parametroUm);
+}
+
+Observe que na classe MinhaPrimeiraInterface não há implementação, só há a 
+declaração dos métodos no cabeçalho, dessa forma, obrigatoriamente devem ser 
+implementados pela classe que implementar essa interface.
+
+Ou seja, para quem for implementar essa classe (quem for criar uma classe com
+base nessa interface), isso indica que ao implementar uma classe a partir dessa
+interface, a classe implementadora vai precisar implementar esses três métodos
+(metodoUm, metodoDois e metodoTres). Pois senão, a classe interface não serveria
+de nada se não tivesse os métodos implementados (por essa razão a ideia de 
+contrato, será preciso programar isso).
+
+Então no exemplo anterior de interface, os métodos apresentam apenas uma 
+assinatura, ou seja, não possuem corpo.
+
+E isso é o contrato que deve ser seguido no caso da implementação, como exemplo
+a classe abaixo implementa essa interface:
+
+public class PrimeiraClasse implements MinhaPrimeiraInterface{
+    // Implementacao metodo 1
+    public void metodoUm(){
+    }
+    public void metodoDois(int valor){
+        return valor;
+    }
+    public void metodoTres(String ){
+        return null;
+    }
+    public static void main(String[] args){
+        System.out.println("Implementacao Minha Primeira Interface")
+    }
+}
+
+A sintaxe se assemelha àquela de Herança, mas ao invés de usar a palavra 
+"extends", interface utiliza a palavra "implements".
+
+Com a criação da classe PrimeiraClasse, podemos definir novas variáveis, novos
+métodos (como setters e getters), e fazer tudo que for preciso, com a condição 
+de que tudo que estiver na interface precisa estar obrigatoriamente na sua 
+implementação.
+
+Ou seja, se na interface tem um método que recebe argumentos específicos e 
+retorna um tipo específico, sua implementação tem que obedecer esta mesma regra,
+precisa receber os mesmos argumentos específicos e retornar o mesmo tipo lá 
+descrito.
+
+Interfaces podem ser definidas como public ou package-private (pode estar num 
+pacote em que as classes podem interagir entre si).
+
+Uma classe pode implementar várias interfaces:
+
+public class MinhaClasse implements Interface0, Intrface2
+
+Uma interface pode herdar várias outras classes:
+
+public interface Interface0 extends Interface1, Interface2
+
+(Note que o conceito de herança não se limita apenas a classes; podemos ter 
+interfaces com características primárias que vão ser especializadas pelas
+interfaces filhas.)
+
+O uso de interfaces desde o início do desenvolvimento de um projeto pode poupar
+muito tempo no futuro. (Sabendo o que o contrato define e se há herança entre 
+esses contratos, já que interface é um contrato e uma interface pode herdar de 
+outras interfaces pode haver contratos e subcontratos de modo que estes podem 
+especializar suas próprias características, suas próprias peculariedades, mas 
+podem herdar propriedades de um contrato maior, mais genericos.)
+
+Criar uma interface para os métodos principais de uma classe e utilizar esta 
+interface para acessá-los torna mais fácil o processo de manutenção de código
+caso esta classe precise ser substituída posteriormente. (Se a gente precisar 
+substituir uma classe que foi implementada na interface é muito mais fácil 
+reescrever/refazer os métodos daquela interface, por exemplo, se quisermos 
+definir uma nova classe ou uma nova estrutura de dados mais rápida para fazer 
+inserção ou remoção de elemento, desde que o contrato seja respeitado a 
+manutenção é facilitada, principalmente em equipes grandes de desenvolvimento.)
+
+Portanto, as interfaces deixam o código mais reutilizável, já que uma única 
+classe pode trabalhar com várias outras por meio de uma única interface. 
+
+
+CLASSES ABSTRATAS
+
+Usamos classes abstratas quando desejamos definir uma classe mais geral, 
+representando objetos de modo mais genérico, porémm, sem instanciá-los 
+(classes abstratas não produzem nenhum tipo de objeto).
+
+Para declarar uma classe abstrata usamos a palavra "abstract", isso impede que 
+objetos sejam instanciados a partir dela (a tentativa ocasiona erro).
+
+Por exemplo, suponha um classe Veiculo com os métodos freia() e acelera(). 
+Considere, que essa classe serve para ônibus, carro, caminhão, avião, jipe, 
+onde cada subtipo de veículo será de uma subclasse (Carro, Onibus, Aviao,
+Caminhao, Jipe). 
+
+Dessa forma, a classe abstrata é como uma interface, porém sem implementação. 
+Então, a gente define uma classe mais genérica que não será instanciada, a 
+instanciação ocorre a partir da subclasse, que terá as características da 
+classe abstrata.
+
+Da mesma forma, métodos abstratos podem ser definidos em uma classe e para isso
+a classe precisa ser abstrata. Isso, como na interface em que os métodos 
+não são implementados, eles são implícitos, abstratos, estabelecendo assim, um
+contrato, em que obriga outras classes implementarem, mas não obrigando o 
+comportamento. 
+
+Assim, a principal diferença é que uma classe abstrata pode ter métodos 
+implementados. Outra distinção é que uma classe pode herdar de apenas uma 
+classe (abstrata ou concreta), mas pode implementar múltiplas interfaces. 
+As classes abstratas focam em herança e reutilização de código, enquanto 
+as interfaces focam em definir um contrato ou um conjunto de comportamentos
+que uma classe deve seguir. 
+
+Portanto, classes abstratas podem conter métodos abstratos e não abstratos; 
+podem conter campos como qualquer outra classe; não podem ser instanciadas; 
+e pode ser herdada. 
+
+Um exemplo de classe abstrata:
+
+// Classe abstrata base
+abstract class Animal {
+    // Método concreto (com implementação) - as subclasses herdam este método
+    void dormir() {
+        System.out.println("Dormindo...");
+    }
+
+    // Método abstrato (sem implementação)
+    abstract void fazerSom();
+}
+
+// Subclasse de Animal
+class Cachorro extends Animal {
+    // Implementação obrigatória do método abstrato
+    @Override  // notação que indica sobreescevrer o respectivo método
+    void fazerSom() {
+        System.out.println("Au au, au.");
+    }
+}
+
+
+Veja, que a classe Cachorro herda da classe abstrata Animal e para sobreescrever
+o método fazerSom() da superclasse Animal, utilizamos "@Override".
+
+Na classe abstrata Animal, métodos abstratos possuem comportamento diferente nas 
+subclasses e por isso não são implementados.
+
+Assim, as subclasses que herdam necessitam deste método, porém de forma mais 
+específica e com suas particularidades (por exemplo, uma subclasse Gato, ao
+invés de fazer "Au au, au", poderia fazer "Miau, ..., miau").
+
+Comparando Classes Abstratas com Interfaces:
+
+    Ambas não podem ser instanciadas;
+
+    Classes abstratas podem apresentar campos que são "public static final"
+    (constantes);
+
+    Métodos concretos em classes abstratas podem ter definido seu modificador
+    de acesso;
+
+    Em interfaces, qualquer método é sempre public;
+
+    Para classes que não têm relação entre si, ou seja, não há relação forte
+    (herança), usa-se interfaces (aparecendo herança usa-se classe abstrata);
+
+    Se é preciso oferecer atributos, é melhor usar classes abstratas, uma vez
+    que com herança os atributos serão herdados.
 
 
 
