@@ -2,7 +2,7 @@ package polimorfismo;
 
 // POLIMORFISMO
 
-// Caracteriza-se por sobreescrever/reescrever um método da classe mãe, 
+// Caracteriza-se por sobrescrever/reescrever um método da classe mãe, 
 // declarando um método com a mesma assinatura. 
 
 // A vantagem disso, é que os objetos vão ter a capacidade de responder a uma 
@@ -47,7 +47,7 @@ package polimorfismo;
 // da classe mãe (Superclasse)
 public class Subclasse extends Superclasse {
 
-    // Polimorfismo: Sobreescrevendo o método da Superclasse
+    // Polimorfismo: Sobrescrevendo o método da Superclasse
     public void metodoImprime(){
         // super faz referência a superclasse
         super.metodoImprime();  // então chamando o método herdado
@@ -58,7 +58,7 @@ public class Subclasse extends Superclasse {
         // Instanciando um objeto da Subclasse
         Subclasse c = new Subclasse();
         // Chamando o método dentro da Subclasse, portanto chama o método desta,
-        // porém a sobreescrita desse método chama o métoda da classe mãe, faz 
+        // porém a sobrescrita desse método chama o métoda da classe mãe, faz 
         // referência a Superclasse, dessa forma, traz o comportamento da classe
         // mãe
         c.metodoImprime();
