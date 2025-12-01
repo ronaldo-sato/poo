@@ -1,53 +1,53 @@
 Linguagem Java - CARACTERÍSTICAS
 
-É uma linguagem orientada a objetos
+É uma linguagem orientada a objetos;
 
 (O paradigma da Orientação a Objetos (OO) surgiu com a linguagem de programação
 Simula67, que foi a base do desenvolvimento da orientação a objetos; Simula67 
 foi a base para a linguagem de programação Smalltalk nos anos 70, considerada 
-a primeira linguagem autêntica de OO.)
+a primeira linguagem autêntica de OO.);
 
 (Alan Kay, um dos criadores do Smalltalk, formulou a analogia biológica: 
 "como seria um sistema de software que funcionasse como um ser vivo?" - células 
 interagindo com outras células através do envio de mensagens; cada célula se 
 comportando como uma unidade autônoma; assim, a ideia foi como construir um 
-sistema de software a partir de agentes autônomos que interagem entre si.)
+sistema de software a partir de agentes autônomos que interagem entre si.);
 
-Desenvolvida pela Sun Microsystems (hoje Oracle) em 1995
+Desenvolvida pela Sun Microsystems (hoje Oracle) em 1995;
 
-Modelada no C++
+Modelada no C++;
 
 Projetada para ser pequena e simples, portável (para diferentes sistemas 
 operacionais e arquiteturas; Portabilidade: "write once, run anywhere" 
-- escreva uma vez, execute em qualquer lugar)
+- escreva uma vez, execute em qualquer lugar);
 
 Linguagem compilada em bytecodes, que é executado por uma máquina virtual (Java
 Virtual Machine; para rodar um programa em Java é preciso ter instalado a 
-máquina virtual)
+máquina virtual);
 
 (Por isso o executável do programa de um programa em Java roda em diferentes 
-sistemas, porque quem executa é a máquina virtual)
+sistemas, porque quem executa é a máquina virtual);
 
 Possui extensa bilioteca com recursos de rede que facilita o trabalho com 
 protocolos TCP/IP, como HTTP e FTP. Além disso, pode executar programa via rede
-com segurança, através de restrições de execução
+com segurança, através de restrições de execução;
 
-Suporta caracteres Unicode (facilita a internacionalização)
+Suporta caracteres Unicode (facilita a internacionalização);
 
-Distribuída com um vasto conjunto de bibliotecas (ou APIs)
+Distribuída com um vasto conjunto de bibliotecas (ou APIs);
 
 Possui facilidades para criação de programas distribuídos e multitarefas 
 (multiplas linhas sendo executadas num mesmo programa, ao invés de execução 
-apenas sequencial)
+apenas sequencial);
 
-Possui desalocação de memória automática por processo de coletor de lixo
+Possui desalocação de memória automática por processo de coletor de lixo;
 
 Programas em Java são formados por uma coleção de classes armazenadas 
-independentemente e que podem ser carregadas no momento de utilização (Carga 
+independentemente e que podem ser carregadas no momento de utilização. (Carga 
 Dinâmica de Código: em determinada parte do programa quando for usada 
 determinada classe, a máquina virtual carrega essa classe dinamicamente a medida
 que for sendo necessária, ao invés de carregar todo o programa em memória como
-em muitas outras linguagens)
+em muitas outras linguagens.)
 
 
 ETAPAS PARA COMPILAÇÃO
@@ -101,14 +101,14 @@ métodos/ações objetos dessa classe terá.
     tudo que os objetos podem fazer em relação a acessar atributos da classe ou
     até mesmo outros métodos são feitos por métodos).
 
-    ATRIBUTOS: são acessados, em geral, por meio de métodos definids pela classe
-    e os modificadores de acesso definem as permissões de como isso pode ser 
-    feito (como será visto adiante).
+    ATRIBUTOS: são acessados, em geral, por meio de métodos definidos pela
+    classe e os modificadores de acesso definem as permissões de como isso 
+    pode ser feito (como será visto adiante).
 
     CONSTRUTORES: são métodos com  mesmo nome da classe e não possui retorno.
 
 Ou seja, uma classe define o comportamento dos objetos através de seus métodos,
-e quais estados ele é capaz de manter através de seus atributos.
+e quais estados os objetos são capazes de manter através de seus atributos.
 
 Classes podem especificar entidades físicas, conceituais e de software.
 
@@ -162,7 +162,7 @@ permite modularidade e ocultação de informação (information hiding).
 
 Dessa forma, o encapsulamento cria um pacote de software cujos métodos e 
 variáveis são relacionados, ou seja, o encapsulamento envolve o relacionamento
-de variáveis. Já a ocultação de informação indica que, a única parete do objeto 
+de variáveis. Já a ocultação de informação indica que, a única parte do objeto 
 que pode ser acessada pelo mundo externo, deve ser feita por meio de operações. 
 
 Assim o objeto tem uma visão interna (como o objeto faz) e uma visão externa 
@@ -191,20 +191,20 @@ Exemplos:
 
 Em suma:
 
-    Um objeto é uma instância de uma classe, uma instância é um objeto que 
+    Um objeto é uma instância de uma classe, e uma instância é um objeto que 
 pertence a uma classe. A classe é um molde, ela é sempre a mesma, ela descreve
 características comuns a vários objetos, mas os objetos gerados por ela, são
 diferentes tendo características variadas. 
 
     A classe é uma abstração e o objeto é a entidade concreta.
 
-    Quando falamos em definição de uma classse, isso significa tornar formal um
+    Quando falamos em definição de uma classe, isso significa tornar formal um
 tipo de dado e todas as operações que têm associação a este tipo. E quando 
 falamos em definir um objeto, significa criar variáveis de um tipo definido por 
 uma classe.
 
-
-Nas classes, o encapsulamento se dá pela visibilidade (modificadores de acesso).
+Adiante, veremos o conceito de classes, mas nas classes o encapsulamento se 
+dá pela visibilidade (modificadores de acesso).
 
 
 MODIFICADORES DE ACESSO (TIPOS DE ACESSO)
@@ -252,14 +252,14 @@ interno, mas sim da sua interface.
 
 HERANÇA: caracteriza-se pela hierarquização das classes de um sistema.
 
-POLIMORFISMO: é um princípio em que um organismo pode surgir de formas distintas
-(conceito oriundo da Biologia). Indivíduos da mesma espécie possuem 
+POLIMORFISMO: é um princípio em que um organismo pode surgir de formas 
+distintas (conceito oriundo da Biologia). Indivíduos da mesma espécie possuem 
 características similares.
 
 MENSAGENS: quando um objeto emissor transmite uma requisição para um objeto 
 receptor para que este execute um comportamento (método) desejado. O objeto 
 receptor precisa ter os métodos definidos para conseguir interagir (métodos 
-getters e setters para recuperar ou modificar algu macesso, atributo que 
+getters e setters para recuperar ou modificar algum acesso, atributo que 
 pertence aquela classe). Os métodos sempre respondem um retorno à uma chamada.
 
 
@@ -280,9 +280,9 @@ A linguagem Java permite e utiliza muito o conceito de encapsulamento.
 O encapculamento também permite a ocultação da informação (information hiding),
 que é o mecanismo para restringir o acesso a alguns dos componentes do objeto. 
 
-Então, a ocultação da informação está relacionada à restrição do acesso enquanto
-o encapculamento está relacionado a separação do programa em partes, ao 
-isolamento das partes. 
+Então, a ocultação da informação está relacionada à restrição do acesso
+enquanto o encapsulamento está relacionado a separação do programa em partes,
+ao isolamento das partes. 
 
 O encapsulamento é um conceito da POO em que os estados dos objetos (variáveis 
 de classe) e seus comportamentos (métodos da classe) são agrupados em conjunto
@@ -293,8 +293,8 @@ os dados. A ocultação da informação é um critério base para modularizar
 sistemas, levando em conta a ocultação das decisões de desenho do projeto, que 
 são suscetíveis a mudanças. 
 
-Em suma, não é preciso saber como é feita a lógica de determinados métodos, pois
-é somente preciso chamá-los e utilizar seus resultados. 
+Em suma, não é preciso saber como é feita a lógica de determinados métodos, 
+pois é somente preciso chamá-los e utilizar seus resultados. 
 
 
 NÍVEIS DE ENCAPSULAMENTO
@@ -311,10 +311,10 @@ tipo de retorno dele.
 
 Na prática, o encapsulamento é feito por getters e setters:
 
-    Setters: métodos que retornam o valor que foi solicitado, mas não prejudica
+    Getters: métodos que retornam o valor que foi solicitado, mas não prejudica
     a integridade do dado.
 
-    Getters: métodos que recebem como argumento uma informação que pode ser de 
+    Setters: métodos que recebem como argumento uma informação que pode ser de 
     qualquer tipo de dado suportado pela linguagem, o que evita acessos 
     indevidos.
 
@@ -371,7 +371,7 @@ Assim, da mesma forma seguindo essa ideia de herdar características, em POO as
 classes podem herdar atributos (propriedades) e métodos (comportamentos), 
 o que é chamado de herança.
 
-Assim, em POO, a classe que terá suas características herdadas é chamada de 
+Por isso, em POO, a classe que terá suas características herdadas é chamada de 
 classe mãe e também de superclasse ou de classe mais genérica, e as classes que 
 herdam essas características são chamadas de classes filhas. 
 
@@ -406,9 +406,9 @@ Para exemplificar, suponha uma classe Pessoa mais genérica (em notação UML):
 Assim, as classes filhas Estudante e Empregado além de possuir seus próprios
 métodos e atributos, herdam os atributos e métodos da classe Pessoa.
 
-Aqui nesse exemplos, os atributos da Pessoa é nome e endereço e os métodos é 
+Aqui neste exemplo, os atributos da Pessoa é nome e endereço e os métodos é 
 comer e dormir. Estudantes e empregados também são pessoas, então veja que um
-estudante tem nome e endereço assim como o empregado. Ambos também podem comer
+Estudante tem nome e endereço assim como Empregado. Ambos também podem comer
 e dormir. Mas o estudante tem um ano escolar, ele pode ser matriculado em uma 
 turma e pode estudar. Já o empregado tem uma categoria e uma função, ele 
 trabalha e uma função é reabastecer. 
@@ -424,13 +424,14 @@ Assim, classes mais genéricas podem especializar outras e classes filhas (ou
 classes mais especializadas) podem generalizar aspectos da classe mãe (ou 
 classe mais genéricas).
 
-Dessa forma, a herança pode ocorrer ou ser repetida em cascata. Por exemplo:
+Dessa forma, a herança pode ocorrer ou ser repetida em cascata. Por exemplo 
+(de cima para baixo, da esquerda para direita):
 
                 Animal                      ---> superclasse
 
-    Selvagem            Doméstico           ---> subclasses
+    Selvagem            Doméstico           ---> subclasses de Animal
 
-                    Gato          Cachorro  ---> subclasses
+                    Gato          Cachorro  ---> subclasses de Doméstico
 
 Em Java, no conceito de herança usamos a nomenclatura de classes mãe, também 
 chamadas de super classe ou classe base, e classes filha, também chamadas de 
@@ -481,7 +482,9 @@ Portanto, a classe filha herda todos os membros da classe mãe:
 CONCEITOS
 
 Construtores não são membros da classe, mas as classes filhas podem chamar um
-construtor da classe mãe.
+construtor da classe mãe. (Construtores: são métodos especiais para inicializar
+objetos de uma classe, que são executados automaticamente quando um objeto é
+criado com "new".)
 
 Podemos declarar um campo na classe filha com o mesmo nome da classe mãe, mesmo
 que os tipos sejam diferentes. 
@@ -493,7 +496,7 @@ diferentes), o que é chamado de polimorfismo (veremos abaixo).
 Como já visto, podemos declarar novos métodos e campos na classe filha, o que 
 é chamado de especialização.
 
-Imagine que temos que modelar uma escola, que tem professores, alunos, 
+Imagine que temos que modelar uma escola que tem professores, alunos, 
 funcionários,considerando que todos são pessoas. Então, Pessoa seria nossa 
 classe mãe e as classes Professores, Funcionários e Alunos seriam as classes
 filhas. 
@@ -519,6 +522,11 @@ public class Aluno extends Pessoa {
     public String matricula;
     // Construtor
     public Aluno(String nome, String cpf, Date dataNascimento){
+        // a palavra super faz referência à classe superior, ou seja, aqui na 
+        // classe Aluno como ela herda a classe Pessoa, a palavra super aqui 
+        // faz referência ao construtor da classe Pessoa, isto é, a mesma forma
+        // como é construído um objeto da classe Pessoa, um objeto da classe 
+        // Aluno também será construído
         super(nome, cpf, dataNascimento);
     }
 }
@@ -530,7 +538,7 @@ public class Professor extends Pessoa {
     public String disciplina;
     // Construtor
     public Professor(String nome, String cpf, Date dataNascimento){
-        super(nome, cpf, dataNascimento);
+        super(nome, cpf, dataNascimento);  // veja que evita reescrever código
     }
 }
 
@@ -542,14 +550,14 @@ public class Funcionario extends Pessoa {
     public String cargo;
     // Construtor
     public Funcionario(String nome, String cpf, Date dataNascimento){
-        super(nome, cpf, dataNascimento);
+        super(nome, cpf, dataNascimento);  // reaproveitando código
     }
 }
 
 
 POLIMORFISMO
 
-Caracteriza-se por sobreescrever/reescrever um método da classe mãe, declarando
+Caracteriza-se por sobrescrever/reescrever um método da classe mãe, declarando
 um método com a mesma assinatura. 
 
 A vantagem disso, é que os objetos vão ter a capacidade de responder a uma 
@@ -566,7 +574,7 @@ será a mesma mas o modo será distinto).
 Em relação à execução do programa quanto à sobreposição de métodos, a JVM 
 (Java Virtual Machine) procura a implementação mais especializada seguindo a
 hierarquia de baixo para cima, ou seja, da classe mais específica (filha) para
-a classe mais genérica (mãe). Então, se o método estiver sobreescrito na classe
+a classe mais genérica (mãe). Então, se o método estiver sobrescrito na classe
 filha, estando implementado tanto na classe filha como na classe mãe, primeiro
 o método é buscado primeiro na filha e depois na mãe. 
 
@@ -578,10 +586,10 @@ classe filha, e não encontrando a JVM assume que o método usado é o da classe
 mãe, ainda que esse método esteja sendo usado dentro de uma classe mais 
 especializada.
 
-Quando um método é sobreescrito na classe filha, ele passa a ter o comportamento
+Quando um método é sobrescrito na classe filha, ele passa a ter o comportamento
 padrão dessa classe, embora seja possível acessar o método da superclasse.
 
-Portanto, a sobreescrita de métodos ocorre quando um método da classe mãe é 
+Portanto, a sobrescrita de métodos ocorre quando um método da classe mãe é 
 redefinido na classe filha, assim, os métodos tem a mesma assinatura e o mesmo 
 tipo de retorno.
 
@@ -726,27 +734,36 @@ ser alterados.
 
 INTERFACES
 
-O conceito de interface tem como principal objetivo criar um contrato em que a
-classe implementadora deve obrigatoriamente obedecer. A ideia é que a classe 
-interface, apenas indique quais métodos precisam ser implementados, portanto 
-ela é uma classe abstrata que apenas contem a assinatura dos métodos, ela não
-contém a implementação desses métodos (não possuem corpo).
+O conceito de interface tem como principal objetivo criar um contrato ou 
+especificações em que a classe que assina esse contrato deve obrigatoriamente
+obedecer.
+
+A ideia é que a classe interface, apenas indique quais métodos precisam ser 
+implementados (definem determinado conjunto de métodos que deverão ser
+implementados pela classe que assina esse contrato).
+
+Portanto ela é uma classe abstrata que apenas contém a assinatura dos métodos 
+(são definidos como abstract), ou seja, ela não contém a implementação desses
+métodos (eles não possuem corpo).
 
 Em Java, para usar interfaces isso é possível com o uso da palavra "interface".
 
 No contexto de interface, quando programamos um software não importa como será
-feita a implementação, pois o mais importante é saber a definição do contrato, 
-para garantir que o software desenvolvido por um grupo se comunique com outro 
-seguindo esse contrato.
+feita a implementação (não importa o comportamento), pois o mais importante é
+saber a definição do contrato (como é a assinatura dos métodos), para garantir
+que o software desenvolvido por um grupo se comunique com outro seguindo esse
+contrato.
 
 Um exemplo do mundo real é o padrão USB (Universal Serial Bus), que é utilizado 
 por inúmeros dispositivos computacionais. Dessa forma, as empresas que criam 
-dispositivos precisam apenas conhecer o protocolo de uma conexão USB.
+dispositivos precisam apenas conhecer o protocolo de uma conexão USB. Ou seja,
+USB é uma especificação que pode ter várias implementações com características 
+diferentes. 
 
-Assim, embora interface seja uma classe abstrata, ela é uma classe abstrata 
+Assim, embora a interface seja uma classe abstrata, ela é uma classe abstrata 
 especial, pois possui apenas métodos abstratos e nenhuma implementação. Ou seja,
 a classe abstrata não implementa nada, ela só define um contrato (o que precisa
-ser seguidos: os métodos assinados na interface). 
+ser seguido: os métodos assinados na interface). 
 
 Para a declaração de interface é usada a palavra reservada "interface", veja o 
 exemplo de uma interface de uma classe:
@@ -757,22 +774,21 @@ public interface MinhaPrimeiraInterface{
     public String metodoTres(String parametroUm);
 }
 
-Observe que na classe MinhaPrimeiraInterface não há implementação, só há a 
-declaração dos métodos no cabeçalho, dessa forma, obrigatoriamente devem ser 
+Então, observe que na classe MinhaPrimeiraInterface não há implementação, só há
+a declaração dos métodos no cabeçalho, os quais, obrigatoriamente devem ser 
 implementados pela classe que implementar essa interface.
 
-Ou seja, para quem for implementar essa classe (quem for criar uma classe com
-base nessa interface), isso indica que ao implementar uma classe a partir dessa
-interface, a classe implementadora vai precisar implementar esses três métodos
-(metodoUm, metodoDois e metodoTres). Pois senão, a classe interface não serveria
-de nada se não tivesse os métodos implementados (por essa razão a ideia de 
-contrato, será preciso programar isso).
+Ou seja, para quem for implementar essa classe, para quem for criar uma classe 
+com base nessa interface, isso estabelece quais métodos (metodoUm, metodoDois e
+metodoTres) precisam ser implementados. Pois senão, a classe interface não 
+serveria de nada se não tivesse os métodos implementados (por essa razão a
+ideia de contrato: será preciso programar isso).
 
 Então no exemplo anterior de interface, os métodos apresentam apenas uma 
 assinatura, ou seja, não possuem corpo.
 
-E isso é o contrato que deve ser seguido no caso da implementação, como exemplo
-a classe abaixo implementa essa interface:
+E isso é o contrato que deve ser seguido no caso da implementação. Abaixo, 
+como exemplo de uma classe que implementa essa interface:
 
 public class PrimeiraClasse implements MinhaPrimeiraInterface{
     // Implementacao metodo 1
@@ -807,7 +823,7 @@ pacote em que as classes podem interagir entre si).
 
 Uma classe pode implementar várias interfaces:
 
-public class MinhaClasse implements Interface0, Intrface2
+public class MinhaClasse implements Interface0, Interface2
 
 Uma interface pode herdar várias outras classes:
 
@@ -818,11 +834,11 @@ interfaces com características primárias que vão ser especializadas pelas
 interfaces filhas.)
 
 O uso de interfaces desde o início do desenvolvimento de um projeto pode poupar
-muito tempo no futuro. (Sabendo o que o contrato define e se há herança entre 
-esses contratos, já que interface é um contrato e uma interface pode herdar de 
-outras interfaces pode haver contratos e subcontratos de modo que estes podem 
+muito tempo no futuro. (Sabendo o que o contrato define e havendo herança entre 
+esses contratos - já que interface é um contrato e uma interface pode herdar de 
+outras interfaces; pode haver contratos e subcontratos de modo que estes podem 
 especializar suas próprias características, suas próprias peculariedades, mas 
-podem herdar propriedades de um contrato maior, mais genericos.)
+podem herdar propriedades de um contrato maior, mais genérico.)
 
 Criar uma interface para os métodos principais de uma classe e utilizar esta 
 interface para acessá-los torna mais fácil o processo de manutenção de código
@@ -839,9 +855,17 @@ classe pode trabalhar com várias outras por meio de uma única interface.
 
 CLASSES ABSTRATAS
 
-Usamos classes abstratas quando desejamos definir uma classe mais geral, 
-representando objetos de modo mais genérico, porémm, sem instanciá-los 
+Classes abstratas servem como "modelo" para outras classes que as herdem, não 
+podendo ser instanciada por si só. Para ter um objeto de uma classe abstrata 
+é necessário criar uma classe mais especializada herdando dela para então 
+instanciar essa nova classe. Os métodos da classe abastrata devem então serem
+sobrescritos nas classes filhas. 
+
+Assim, usamos classes abstratas quando desejamos definir uma classe mais geral, 
+representando objetos de modo mais genérico, porém, sem instanciá-los 
 (classes abstratas não produzem nenhum tipo de objeto).
+
+(Uma ideia de abstração é permitir padronização.)
 
 Para declarar uma classe abstrata usamos a palavra "abstract", isso impede que 
 objetos sejam instanciados a partir dela (a tentativa ocasiona erro).
@@ -851,22 +875,24 @@ Considere, que essa classe serve para ônibus, carro, caminhão, avião, jipe,
 onde cada subtipo de veículo será de uma subclasse (Carro, Onibus, Aviao,
 Caminhao, Jipe). 
 
-Dessa forma, a classe abstrata é como uma interface, porém sem implementação. 
+Dessa forma, a classe abstrata é como uma interface, porém sem instanciação. 
 Então, a gente define uma classe mais genérica que não será instanciada, a 
 instanciação ocorre a partir da subclasse, que terá as características da 
 classe abstrata.
 
 Da mesma forma, métodos abstratos podem ser definidos em uma classe e para isso
-a classe precisa ser abstrata. Isso, como na interface em que os métodos 
+a classe precisa ser abstrata. Assim, como na interface em que os métodos 
 não são implementados, eles são implícitos, abstratos, estabelecendo assim, um
 contrato, em que obriga outras classes implementarem, mas não obrigando o 
 comportamento. 
 
-Assim, a principal diferença é que uma classe abstrata pode ter métodos 
-implementados. Outra distinção é que uma classe pode herdar de apenas uma 
-classe (abstrata ou concreta), mas pode implementar múltiplas interfaces. 
-As classes abstratas focam em herança e reutilização de código, enquanto 
-as interfaces focam em definir um contrato ou um conjunto de comportamentos
+Assim, a principal diferença da classe abstrata com a interface é que
+uma classe abstrata pode ter métodos implementados. Outra distinção é que uma 
+classe pode herdar de apenas uma classe (abstrata ou concreta), mas pode
+implementar múltiplas interfaces. 
+
+Classes abstratas focam em herança e reutilização de código, enquanto as
+interfaces focam em definir um contrato ou um conjunto de comportamentos
 que uma classe deve seguir. 
 
 Portanto, classes abstratas podem conter métodos abstratos e não abstratos; 
@@ -889,18 +915,21 @@ abstract class Animal {
 // Subclasse de Animal
 class Cachorro extends Animal {
     // Implementação obrigatória do método abstrato
-    @Override  // notação que indica sobreescevrer o respectivo método
+    @Override  // anotação que indica que método está sendo sobrescrito
     void fazerSom() {
         System.out.println("Au au, au.");
     }
 }
 
-
 Veja, que a classe Cachorro herda da classe abstrata Animal e para sobreescrever
-o método fazerSom() da superclasse Animal, utilizamos "@Override".
+o método fazerSom() da superclasse Animal, estamos utilizando "@Override".
 
-Na classe abstrata Animal, métodos abstratos possuem comportamento diferente nas 
-subclasses e por isso não são implementados.
+Na classe abstrata Animal, métodos abstratos possuem comportamentos diferentes
+aos das subclasses e por isso não são implementados. Ou seja, diversas 
+subclasses de diferentes tipos de animais podem herdar a classe Animal, mas 
+como o comportamento de cada animal em relação a um método é diferente, a classe
+mãe pode ter um método abstrato, e as subclasses fazem a implementação desse 
+método de forma especializada.
 
 Assim, as subclasses que herdam necessitam deste método, porém de forma mais 
 específica e com suas particularidades (por exemplo, uma subclasse Gato, ao
@@ -923,6 +952,24 @@ Comparando Classes Abstratas com Interfaces:
 
     Se é preciso oferecer atributos, é melhor usar classes abstratas, uma vez
     que com herança os atributos serão herdados.
+
+
+Em suma, o polimorfismo permite que classes abstratas consigam receber 
+comportamentos através de classes concretas.
+
+
+CLASSES E MÉTODOS GENÉRICOS (GENERICS)
+
+Generics é um conceito que permite que tipos (classes e interfaces) sejam 
+parâmetros na definição de classes, interfaces e métodos.
+
+Isso mermite reusar código para diferentes tipos e evita o uso de casting 
+(conversão de tipo de objeto). 
+
+Esse recurso é semelhante aos templates em C++.
+
+
+
 
 
 
