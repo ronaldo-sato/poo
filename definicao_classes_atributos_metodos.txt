@@ -286,7 +286,7 @@ public class Conta{
     // Método Main
     public static void main(String[] args){
 
-        // Instanciando um objeto
+        // Instanciando um 1o objeto
         Conta obj1 = new Conta("1234-5", 3000);
         System.out.println("Saldo Inicial: " + obj1.getSaldo());
         System.out.println("Debitando 500");
@@ -294,11 +294,11 @@ public class Conta{
         System.out.println("Saldo Atual: " + obj1.getSaldo());
         System.out.println("Numero da Conta: " + obj1.getNumero());
 
-        // Instanciando um segundo objeto
+        // Instanciando um 2o objeto
         Conta obj2 = new Conta("2345-6", 10000);
         System.out.println("Saldo Inicial: " + obj2.getSaldo());
-        System.out.println("Debitando 2000");
-        obj2.debitar(2000);
+        System.out.println("Creditando 500");
+        obj2.creditar(500);
         System.out.println("Saldo Atual: " + obj2.getSaldo());
         System.out.println("Numero da Conta: " + obj2.getNumero());
 
@@ -329,4 +329,3 @@ public class Conta{
     }
 
 }
-
