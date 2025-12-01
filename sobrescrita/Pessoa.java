@@ -2,7 +2,8 @@ package sobrescrita;
 
 import java.util.Date;
 
-// Classe mãe (superclasse): mais genérica
+// Classe mãe (superclasse): mais genérica (será a base para as 
+// classes Aluno, Professor e Funcionario)
 public class Pessoa {
     public String nome;
     public String cpf;

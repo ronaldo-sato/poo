@@ -11,6 +11,7 @@ public class Funcionario extends Pessoa {
     // Construtor
     public Funcionario(String nome, String cpf, Date dataNascimento){
         // Utilizando o comportamento da superclasse (classe mãe)
+        // super faz referência a superclasse (construtor da classe mãe)
         super(nome, cpf, dataNascimento);
     }
 }
